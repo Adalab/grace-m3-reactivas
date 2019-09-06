@@ -1,0 +1,26 @@
+.header {
+  @media all and (min-width: $width-tablet) {
+    width: 768px;
+    margin: auto;
+  }
+  @media all and (min-width: $width-desktop) {
+    width: 1024px;
+  }
+  &_container {
+    background-color: $color-white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 31px 0 30px 40px;
+    margin-bottom: 0;
+    height: 111px;
+    width: 320px;
+    margin-right: 10%;
+    &_img {
+      height: 50px;
+      width: 201px;
+      margin: 0;
+      border-style: none;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.editor {
+  &_container {
+    background-image: linear-gradient(
+      to bottom,
+      $color-light-gray,
+      $color-white
+    );
+    // margin: 0;
+  }
+  &_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px 0 20px;
+    min-width: 320px;
+    font-family: $primary-Font;
+    @media all and (min-width: $width-tablet) {
+      width: 768px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      margin: auto;
+    }
+    @media all and (min-width: $width-desktop) {
+      width: 1024px;
+    }
+  }
+  &_card {
+    @media all and (min-width: $width-tablet) {
+      width: 329px;
+    }
+    @media all and (min-width: $width-desktop) {
+      width: 585px;
+    }
+  }
+  &_form {
+    @media all and (min-width: $width-tablet) {
+      width: 329px;
+      margin-top: 10px;
+    }
+  }
+}

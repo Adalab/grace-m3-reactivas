@@ -1,0 +1,94 @@
+.main {
+  background-color: $color-light-gray;
+  width: 100%;
+
+  &_content {
+    width: 268px;
+    margin: auto;
+    padding-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media all and (min-width: $width-tablet) {
+      width: 419px;
+      padding-top: 350px;
+    }
+  }
+
+  &_img {
+    width: 100%;
+    padding: 0 9px;
+  }
+
+  &_description {
+    width: 325px;
+    margin-top: 35px;
+    text-align: center;
+    @media all and (min-width: $width-tablet) {
+      margin-top: 31px;
+    }
+  }
+
+  &_title {
+    font-family: "Merriweather";
+    font-weight: 900;
+    color: $color-dull-orange;
+    font-size: 20px;
+    margin: 0;
+    @media all and (min-width: $width-tablet) {
+      font-size: 24px;
+    }
+  }
+
+  &_text {
+    font-size: 12px;
+    color: $color-dark-green-blue;
+    @media all and (min-width: $width-tablet) {
+      font-size: 16px;
+    }
+  }
+
+  &_actions {
+    border: 1.6px solid $color-border-landing;
+    border-radius: 4px;
+    width: 268px;
+    height: 74px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 7px;
+    margin-top: 18px;
+    @media all and (min-width: $width-tablet) {
+      width: 325px;
+      height: 86px;
+      margin-top: 27px;
+      padding-top: 10px;
+    }
+  }
+
+  &_action {
+    width: 60px;
+    height: 48.8px;
+    text-align: center;
+    @media all and (min-width: $width-tablet) {
+      width: 75px;
+      height: 61px;
+    }
+
+    &_icon {
+      color: $color-dull-orange;
+      font-size: 22.4px;
+      @media all and (min-width: $width-tablet) {
+        font-size: 28px;
+      }
+    }
+    &_item {
+      margin: 0;
+      font-size: 12.8px;
+      color: $color-dark-gray;
+      @media all and (min-width: $width-tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}
