@@ -3,30 +3,15 @@ import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
 import MainDescription from "./MainDescription";
+import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
 
 function App() {
   return (
     <main className="main">
       <div className="main_content">
         <MainDescription foto={awesomeProfilePic} mainTitle="Crea tu tarjeta de visita" mainText="Crea mejores contactos profesionales de forma fácil y cómoda" />
+        <SquareFontawesomeIcons />
 
-        <div className="main_actions">
-          <div className="main_action">
-            {" "}
-            <i className="main_action_icon far fa-object-ungroup"></i>
-            <p className="main_action_item">Diseña</p>
-          </div>
-          <div className="main_action">
-            {" "}
-            <i className="main_action_icon far fa-keyboard"></i>
-            <p className="main_action_item">Rellena</p>
-          </div>
-          <div className="main_action">
-            {" "}
-            <i className="main_action_icon fas fa-share-alt"></i>
-            <p className="main_action_item">Comparte</p>
-          </div>
-        </div>
         <button className="main_button">
           {" "}
           <a className="main_button_link" href="./editor.html" target="_self">
