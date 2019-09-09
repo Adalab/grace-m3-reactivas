@@ -95,7 +95,7 @@
                                             <section className="design_palette-option">
                                                 <input className="form_item js-select1" type="radio" value="0" name="btn"
                                                 id="design1" checked />
-                                                <label for="design1" className="radio_btn"></label>
+                                                <label htmlFor="design1" className="radio_btn"></label>
                                                 <div className="design_palette item item_1"></div>
                                                 <div className="design_palette  item item_2"></div>
                                                 <div className="design_palette item item_3"></div>
@@ -103,7 +103,7 @@
                                             <section className="design_palette-option">
                                                 <input className="form_item js-select2" type="radio" value="1" name="btn"
                                                 id="design2" />
-                                                <label for="design2" className="radio_btn"></label>
+                                                <label htmlFor="design2" className="radio_btn"></label>
                                                 <div className="design_palette item item_4"></div>
                                                 <div className="design_palette item item_5"></div>
                                                 <div className="design_palette item item_6"></div>
@@ -111,7 +111,7 @@
                                             <section className="design_palette-option">
                                                 <input className="form_item js-select3" type="radio" value="2" name="btn"
                                                 id="design3" />
-                                                <label for="design3" className="radio_btn"></label>
+                                                <label htmlFor="design3" className="radio_btn"></label>
                                                 <div className="design_palette item item_7"></div>
                                                 <div className="design_palette item item_8"></div>
                                                 <div className="design_palette item item_9"></div>
@@ -132,17 +132,17 @@
                                 <div className="js-collapsible-content">
                                     <div className="fill-in_items">
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="full_name">Nombre completo</label>
+                                            <label className="fill-in_label" htmlFor="full_name">Nombre completo</label>
                                             <input className="js-name fill-in_input" id="full_name"
                                             type="text" name="name" placeholder="Hermione Granger" required />
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="job">Puesto</label>
+                                            <label className="fill-in_label" htmlFor="job">Puesto</label>
                                             <input className="js-job fill-in_input" id="job" type="text"
                                             name="job" placeholder="Front-end developer" />
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="img-profile">Imagen de perfil</label>
+                                            <label className="fill-in_label" htmlFor="img-profile">Imagen de perfil</label>
                                             <div className="fill-in_buttonImg-wrapper">
                                                 <input className="fill-in_button js__profile-trigger" id="img-profile" type="button"
                                                 value="Añadir imagen" name="img-profile" />
@@ -152,24 +152,24 @@
                                             </div>
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="phone">Teléfono</label>
+                                            <label className="fill-in_label" htmlFor="phone">Teléfono</label>
                                             <input className="js-phone fill-in_input" id="phone" type="tel"
                                             minlength="9" name="phone" placeholder="+34 678334765" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
                                             />
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="email">Email</label>
+                                            <label className="fill-in_label" htmlFor="email">Email</label>
                                             <input className="js-email fill-in_input" id="email" type="email"
                                             name="email" placeholder="hermione-granger@gmail.com" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                                             />
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="linkedin">Linkedin</label>
+                                            <label className="fill-in_label" htmlFor="linkedin">Linkedin</label>
                                             <input className="js-linkedin fill-in_input" id="linkedin"
                                             type="text" name="linkedin" placeholder="hermionegranger" />
                                         </div>
                                         <div className="fill-in_item">
-                                            <label className="fill-in_label" for="github">Github</label>
+                                            <label className="fill-in_label" htmlFor="github">Github</label>
                                             <input className="js-github fill-in_input" id="github" type="text"
                                             name="github" placeholder="hermione-granger" />
                                         </div>
