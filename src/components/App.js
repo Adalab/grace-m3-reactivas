@@ -4,6 +4,7 @@ import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
 import ResetButton from "./ResetButton";
 import UploadFile from "./UploadFile";
+import Collapsibles from "./Collapsibles.js";
 
 // function App() {
 //   return (
@@ -317,5 +318,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
