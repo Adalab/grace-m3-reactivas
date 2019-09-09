@@ -11,14 +11,18 @@ const ImageInputFile = props => {
 class ImageInput extends React.Component {
   render() {
     return (
-      <>
+      <div>
         <label className="fill-in_label" for={this.props.id}>
           {this.props.label}{" "}
         </label>
-        <div className={this.props.classInputContainer}>{this.props.children}</div>
-      </>
+        <div className={this.props.classInputContainer}>
+          <ImageInputButton className="js__profile-trigger" id="img-profile" value="Añadir imagen" name="img-profile">
+            <ImageInputFile className="action_hiddenField js__profile-upload-btn" name="photo" id="img-selector"></ImageInputFile>
+          </ImageInputButton>
+        </div>
+      </div>
     );
   }
 }
 
-export { ImageInput, ImageInputButton, ImageInputFile };
+export default ImageInput;
