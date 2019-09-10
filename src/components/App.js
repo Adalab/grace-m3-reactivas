@@ -2,50 +2,35 @@ import React from "react";
 import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
+import InputContainer from "./InputContainer.js";
 import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
-import UploadFile from "./UploadFile";
 import ShareButton from "./ShareButton";
 import Collapsibles from "./Collapsibles.js";
 import Palettes from "./Palettes.js";
+import MainDescription from "./MainDescription";
+import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
+// import ResetButton from "./ResetButton";
+// import UploadFile from "./UploadFile";
+// import Collapsibles from "./Collapsibles.js";
+// import Palettes from "./Palettes.js";
 
-// function App() {
+//function App() {
 //   return (
 //     <main className="main">
-//     <div className="main_content">
-//         <img className="main_img" src={awesomeProfilePic} />
-//         <div className="main_description">
-//              <h1 className="main_title">Crea tu tarjeta de visita</h1>
-
-//             <p className="main_text">Crea mejores contactos profesionales de forma fácil y cómoda</p>
-//         </div>
-//         <div className="main_actions">
-//             <div className="main_action"> <i className="main_action_icon far fa-object-ungroup"></i>
-
-//                 <p className="main_action_item">Diseña</p>
-//             </div>
-//             <div className="main_action"> <i className="main_action_icon far fa-keyboard"></i>
-
-//                 <p className="main_action_item">Rellena</p>
-//             </div>
-//             <div className="main_action"> <i className="main_action_icon fas fa-share-alt"></i>
-
-//                 <p className="main_action_item">Comparte</p>
-//             </div>
-//         </div>
-      //  <MainButton />
-//     </div>
-// <div className="footer">
-// <small className="footer_small"> Awesome profile-cards @ Sense.JS 2019</small>
-//     <a
-//     className="footer_link" href="http://www.adalab.es" target="_blank">
-//         <img className="footer_img" src={logoAdalab} alt="logo Adalab"/>
+//       <div className="main_content">
+//         <MainDescription foto={awesomeProfilePic} mainTitle="Crea tu tarjeta de visita" mainText="Crea mejores contactos profesionales de forma fácil y cómoda" />
+//         <SquareFontawesomeIcons />
+//         <MainButton />
+//       </div>
+//       <div className="footer">
+//         <small className="footer_small"> Awesome profile-cards @ Sense.JS 2019</small>
+//         <a className="footer_link" href="http://www.adalab.es" target="_blank">
+//           <img className="footer_img" src={logoAdalab} alt="logo Adalab" />
 //         </a>
-// </div>
-// </main>
-
+//       </div>
+//     </main>
 //   );
-
 // }
 
 function App() {
@@ -147,84 +132,8 @@ function App() {
               ></Collapsibles>
 
               <div class="js-collapsible-content">
-                <div class="fill-in_items">
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="full_name">
-                      Nombre completo
-                    </label>
-                    <input
-                      class="js-name fill-in_input"
-                      id="full_name"
-                      type="text"
-                      name="name"
-                      placeholder="Hermione Granger"
-                      required
-                    />
-                  </div>
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="job">
-                      Puesto
-                    </label>
-                    <input
-                      class="js-job fill-in_input"
-                      id="job"
-                      type="text"
-                      name="job"
-                      placeholder="Front-end developer"
-                    />
-                  </div>
-                  <UploadFile />
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="phone">
-                      Teléfono
-                    </label>
-                    <input
-                      class="js-phone fill-in_input"
-                      id="phone"
-                      type="tel"
-                      minlength="9"
-                      name="phone"
-                      placeholder="+34 678334765"
-                      pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
-                    />
-                  </div>
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="email">
-                      Email
-                    </label>
-                    <input
-                      class="js-email fill-in_input"
-                      id="email"
-                      type="email"
-                      name="email"
-                      placeholder="hermione-granger@gmail.com"
-                      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                    />
-                  </div>
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="linkedin">
-                      Linkedin
-                    </label>
-                    <input
-                      class="js-linkedin fill-in_input"
-                      id="linkedin"
-                      type="text"
-                      name="linkedin"
-                      placeholder="hermionegranger"
-                    />
-                  </div>
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="github">
-                      Github
-                    </label>
-                    <input
-                      class="js-github fill-in_input"
-                      id="github"
-                      type="text"
-                      name="github"
-                      placeholder="hermione-granger"
-                    />
-                  </div>
+                <div className="fill-in_items">
+                  <InputContainer />
                 </div>
               </div>
             </section>
