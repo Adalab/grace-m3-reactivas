@@ -29,9 +29,6 @@
 //     }
 // }
 
-
-
-
 // export default Collapsibles;
 
 ////
@@ -39,23 +36,21 @@
 import React from "react";
 import "../stylesheets/scss/main.scss";
 
-const Collapsibles = (props) => {
-
-    return (
-        <div className="js-collapsible-trigger">
-            <legend className="legend">
-                <i className={props.icon} />
-                <h2 className="legend_title">{props.title}</h2>
-                <i className={props.arrow} />
-            </legend>
-        </div>
-
-    );
-}
+const Collapsibles = props => {
+  return (
+    <div className="js-collapsible-trigger">
+      <legend className="legend">
+        <i className={props.icon} />
+        <h2 className="legend_title">{props.title}</h2>
+        <i className={props.arrow} />
+      </legend>
+      {props.children}
+    </div>
+  );
+};
 
 export default Collapsibles;
 
 // Las funciones no tienen This, y es un dummie y nos pasa los datos como argumento, no tienen estado, no tiene ciclo de vida
 
 //siempre vamos a utilizar un componente dummie a no ser que tenga estado o ciclo de vida
-
