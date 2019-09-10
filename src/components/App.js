@@ -3,6 +3,9 @@ import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
 import InputContainer from "./InputContainer.js";
+import ResetButton from "./ResetButton";
+import UploadFile from "./UploadFile";
+import Collapsibles from "./Collapsibles.js";
 
 // function App() {
 //   return (
@@ -61,10 +64,7 @@ function App() {
           <section class="editor_card">
             <main class="card_content palette1">
               <div class="container">
-                <button class="card_button-reset js-reset">
-                  {" "}
-                  <i class="far fa-trash-alt trash_icon"></i> Reset
-                </button>
+                <ResetButton />
                 <div class="card js-card">
                   <div class="card_header">
                     <h1 class="js-name card_name" data-placeholder="Nombre Apellido">
