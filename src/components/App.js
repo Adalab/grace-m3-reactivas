@@ -3,6 +3,7 @@ import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
 import InputContainer from "./InputContainer.js";
+import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
 import Collapsibles from "./Collapsibles.js";
 import Palettes from "./Palettes.js";
@@ -31,9 +32,7 @@ import Palettes from "./Palettes.js";
 //                 <p className="main_action_item">Comparte</p>
 //             </div>
 //         </div>
-//         <button className="main_button"> <a className="main_button_link" href="./editor.html" target="_self">comenzar</a>
-
-//         </button>
+      //  <MainButton />
 //     </div>
 // <div className="footer">
 // <small className="footer_small"> Awesome profile-cards @ Sense.JS 2019</small>
