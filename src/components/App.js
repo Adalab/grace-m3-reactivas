@@ -4,6 +4,7 @@ import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
 import ResetButton from "./ResetButton";
 import UploadFile from "./UploadFile";
+import ShareButton from "./ShareButton";
 
 // function App() {
 //   return (
@@ -283,24 +284,7 @@ function App() {
                 </div>
               </div>
             </section>
-            <div class="completed_content hidden">
-              <h3 class="completed_content_title">
-                La tarjeta ha sido creada:
-              </h3>
-              <a href="#" class="completed_content_url" target="_self"></a>
-
-              <button type="submit" class="completed_content_button">
-                {" "}
-                <a
-                  href=""
-                  class="completed_content_button_twitter"
-                  target="blank"
-                >
-                  <i class="completed_content_button_icon fab fa-twitter"></i>
-                  Compartir en twitter
-                </a>
-              </button>
-            </div>
+            <ShareButton />
           </section>
         </main>
       </section>
