@@ -2,51 +2,50 @@ import React from "react";
 import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import "../stylesheets/scss/main.scss";
+import ResetButton from "./ResetButton";
+import UploadFile from "./UploadFile";
 import Collapsibles from "./Collapsibles.js";
 import Palettes from "./Palettes.js";
 
 // function App() {
 //   return (
 //     <main className="main">
-//       <div className="main_content">
+//     <div className="main_content">
 //         <img className="main_img" src={awesomeProfilePic} />
 //         <div className="main_description">
-//           <h1 className="main_title">Crea tu tarjeta de visita</h1>
+//              <h1 className="main_title">Crea tu tarjeta de visita</h1>
 
-//           <p className="main_text">Crea mejores contactos profesionales de forma fácil y cómoda</p>
+//             <p className="main_text">Crea mejores contactos profesionales de forma fácil y cómoda</p>
 //         </div>
 //         <div className="main_actions">
-//           <div className="main_action">
-//             {" "}
-//             <i className="main_action_icon far fa-object-ungroup"></i>
-//             <p className="main_action_item">Diseña</p>
-//           </div>
-//           <div className="main_action">
-//             {" "}
-//             <i className="main_action_icon far fa-keyboard"></i>
-//             <p className="main_action_item">Rellena</p>
-//           </div>
-//           <div className="main_action">
-//             {" "}
-//             <i className="main_action_icon fas fa-share-alt"></i>
-//             <p className="main_action_item">Comparte</p>
-//           </div>
+//             <div className="main_action"> <i className="main_action_icon far fa-object-ungroup"></i>
+
+//                 <p className="main_action_item">Diseña</p>
+//             </div>
+//             <div className="main_action"> <i className="main_action_icon far fa-keyboard"></i>
+
+//                 <p className="main_action_item">Rellena</p>
+//             </div>
+//             <div className="main_action"> <i className="main_action_icon fas fa-share-alt"></i>
+
+//                 <p className="main_action_item">Comparte</p>
+//             </div>
 //         </div>
-//         <button className="main_button">
-//           {" "}
-//           <a className="main_button_link" href="./editor.html" target="_self">
-//             comenzar
-//           </a>
+//         <button className="main_button"> <a className="main_button_link" href="./editor.html" target="_self">comenzar</a>
+
 //         </button>
-//       </div>
-//       <div className="footer">
-//         <small className="footer_small"> Awesome profile-cards @ Sense.JS 2019</small>
-//         <a className="footer_link" href="http://www.adalab.es" target="_blank">
-//           <img className="footer_img" src={logoAdalab} alt="logo Adalab" />
+//     </div>
+// <div className="footer">
+// <small className="footer_small"> Awesome profile-cards @ Sense.JS 2019</small>
+//     <a
+//     className="footer_link" href="http://www.adalab.es" target="_blank">
+//         <img className="footer_img" src={logoAdalab} alt="logo Adalab"/>
 //         </a>
-//       </div>
-//     </main>
+// </div>
+// </main>
+
 //   );
+
 // }
 
 function App() {
@@ -65,10 +64,7 @@ function App() {
           <section class="editor_card">
             <main class="card_content palette1">
               <div class="container">
-                <button class="card_button-reset js-reset">
-                  {" "}
-                  <i class="far fa-trash-alt trash_icon"></i> Reset
-                </button>
+                <ResetButton />
                 <div class="card js-card">
                   <div class="card_header">
                     <h1 class="js-name card_name" data-placeholder="Nombre Apellido">
@@ -115,39 +111,6 @@ function App() {
               <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
                 <Palettes></Palettes>
               </Collapsibles>
-
-              {/* <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
-                <form></form>
-              </Collapsibles> */}
-
-              {/* <div class="js-collapsible-content">
-                <div class="tittlePalettes">
-                  <div class="design_palette-description">Colores</div>
-                  <div class="palettes js-palettes">
-                    <section class="design_palette-option">
-                      <input class="form_item js-select1" type="radio" value="0" name="btn" id="design1" checked />
-                      <label for="design1" class="radio_btn"></label>
-                      <div class="design_palette item item_1"></div>
-                      <div class="design_palette  item item_2"></div>
-                      <div class="design_palette item item_3"></div>
-                    </section>
-                    <section class="design_palette-option">
-                      <input class="form_item js-select2" type="radio" value="1" name="btn" id="design2" />
-                      <label for="design2" class="radio_btn"></label>
-                      <div class="design_palette item item_4"></div>
-                      <div class="design_palette item item_5"></div>
-                      <div class="design_palette item item_6"></div>
-                    </section>
-                    <section class="design_palette-option">
-                      <input class="form_item js-select3" type="radio" value="2" name="btn" id="design3" />
-                      <label for="design3" class="radio_btn"></label>
-                      <div class="design_palette item item_7"></div>
-                      <div class="design_palette item item_8"></div>
-                      <div class="design_palette item item_9"></div>
-                    </section>
-                  </div>
-                </div>
-              </div> */}
             </section>
             <section class="fill-in_section js-collapsible">
               <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow"></Collapsibles>
@@ -166,16 +129,7 @@ function App() {
                     </label>
                     <input class="js-job fill-in_input" id="job" type="text" name="job" placeholder="Front-end developer" />
                   </div>
-                  <div class="fill-in_item">
-                    <label class="fill-in_label" for="img-profile">
-                      Imagen de perfil
-                    </label>
-                    <div class="fill-in_buttonImg-wrapper">
-                      <input class="fill-in_button js__profile-trigger" id="img-profile" type="button" value="Añadir imagen" name="img-profile" />
-                      <input name="photo" type="file" id="img-selector" class="action_hiddenField js__profile-upload-btn" />
-                      <div class="img-profile_preview js__profile-preview"></div>
-                    </div>
-                  </div>
+                  <UploadFile />
                   <div class="fill-in_item">
                     <label class="fill-in_label" for="phone">
                       Teléfono
