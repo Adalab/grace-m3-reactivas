@@ -114,7 +114,11 @@ function App() {
 								</div>
 							</div>
 						</section>
-						<ShareButton />
+						<div className="completed_content hidden">
+							<h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
+							<a href="#" className="completed_content_url" target="_self"></a>
+							<ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
+						</div>
 					</section>
 				</main>
 			</section>
