@@ -3,16 +3,13 @@ import "../stylesheets/scss/main.scss";
 import Header from "./header";
 import Footer from "./footer";
 import InputContainer from "./InputContainer.js";
-import MainButton from "./MainButton";
+// import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
+import ShareButton from "./ShareButton";
 import Collapsibles from "./Collapsibles.js";
-import Palettes from "./Palettes.js";
-import MainDescription from "./MainDescription";
-import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
-// import ResetButton from "./ResetButton";
-// import UploadFile from "./UploadFile";
-// import Collapsibles from "./Collapsibles.js";
-// import Palettes from "./Palettes.js";
+// import MainDescription from "./MainDescription";
+// import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
+import PalettesContainer from "./PalettesContainer.js";
 
 //function App() {
 //   return (
@@ -108,7 +105,7 @@ function App() {
                 title="Diseña"
                 arrow="fas fas fa-chevron-up legend_arrow"
               >
-                <Palettes></Palettes>
+                <PalettesContainer></PalettesContainer>
               </Collapsibles>
             </section>
             <section class="fill-in_section js-collapsible">
@@ -119,7 +116,7 @@ function App() {
               ></Collapsibles>
 
               <div class="js-collapsible-content">
-                <div className="fill-in_items">
+                <div class="fill-in_items">
                   <InputContainer />
                 </div>
               </div>
@@ -140,24 +137,7 @@ function App() {
                 </div>
               </div>
             </section>
-            <div class="completed_content hidden">
-              <h3 class="completed_content_title">
-                La tarjeta ha sido creada:
-              </h3>
-              <a href="#" class="completed_content_url" target="_self"></a>
-
-              <button type="submit" class="completed_content_button">
-                {" "}
-                <a
-                  href=""
-                  class="completed_content_button_twitter"
-                  target="blank"
-                >
-                  <i class="completed_content_button_icon fab fa-twitter"></i>
-                  Compartir en twitter
-                </a>
-              </button>
-            </div>
+            <ShareButton />
           </section>
         </main>
       </section>
