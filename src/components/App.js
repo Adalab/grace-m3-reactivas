@@ -1,7 +1,9 @@
 import React from "react";
 import "../stylesheets/scss/main.scss";
-import Header from "./header";
-import Footer from "./footer";
+import awesomeProfilePic from "../images/tarjetas-molonas.svg";
+import logoAdalab from "../images/logo-adalab-80px.png";
+import Header from "./Header";
+import Footer from "./Footer";
 import InputContainer from "./InputContainer.js";
 // import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
@@ -19,7 +21,11 @@ import PalettesContainer from "./PalettesContainer.js";
 //         <SquareFontawesomeIcons />
 //         <MainButton />
 //       </div>
-// <Footer />
+//<Footer
+//      url="https://www.adalab.es"
+//      foto={logoAdalab}
+//        title="Awesome profile-cards @ Sense.JS 2019"
+//      />
 //     </main>
 //   );
 // }
@@ -27,7 +33,12 @@ import PalettesContainer from "./PalettesContainer.js";
 function App() {
   return (
     <div>
-      <Header />
+      <Header
+        url="/"
+        foto={awesomeProfilePic}
+        destiny="_self"
+        alt="Awesome Profile Cards"
+      />
       <section class="editor_container">
         <main class="editor_main">
           <section class="editor_card">
@@ -141,7 +152,11 @@ function App() {
           </section>
         </main>
       </section>
-      <Footer />
+      <Footer
+        url="https://www.adalab.es"
+        foto={logoAdalab}
+        title="Awesome profile-cards @ Sense.JS 2019"
+      />
     </div>
   );
 }
