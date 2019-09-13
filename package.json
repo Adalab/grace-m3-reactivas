@@ -4,7 +4,10 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+<<<<<<< HEAD
     "create-react-app": "^3.1.1",
+=======
+>>>>>>> 80a44e921349bd77fa8ebdc971181c1f1126a33e
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
