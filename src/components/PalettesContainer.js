@@ -18,3 +18,5 @@ const PalettesContainer = props => {
 };
 
 export default PalettesContainer;
+
+// Falta introducir props en el título (Colores)
