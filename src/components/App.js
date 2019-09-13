@@ -1,7 +1,7 @@
 import React from 'react';
 import logoAdalab from '../images/logo-adalab-80px.png';
 import awesomeProfilePic from '../images/tarjetas-molonas.svg';
-import '../stylesheets/scss/main.scss';
+// import '../stylesheets/scss/main.scss';
 import InputContainer from './InputContainer.js';
 // import MainButton from "./MainButton";
 import ResetButton from './ResetButton';
