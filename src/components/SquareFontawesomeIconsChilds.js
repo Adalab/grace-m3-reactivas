@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/scss/components/SquareFontawesomeIconsChilds.scss";
 
 const SquareFontawesomeIconsChilds = props => {
   const classNameIcon = `${props.iconClassName} main_action_icon`;
