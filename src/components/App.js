@@ -1,17 +1,17 @@
 import React from "react";
-import "../stylesheets/scss/main.scss";
-import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import logoAdalab from "../images/logo-adalab-80px.png";
+import awesomeProfilePic from "../images/tarjetas-molonas.svg";
+import "../stylesheets/scss/main.scss";
 import Header from "./Header";
-import Footer from "./Footer";
 import InputContainer from "./InputContainer.js";
 // import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
-import ShareButton from "./Share";
+import Share from "./Share";
 import Collapsibles from "./Collapsibles.js";
 // import MainDescription from "./MainDescription";
 // import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
 import PalettesContainer from "./PalettesContainer.js";
+import Footer from "./Footer";
 
 //function App() {
 //   return (
@@ -21,9 +21,9 @@ import PalettesContainer from "./PalettesContainer.js";
 //         <SquareFontawesomeIcons />
 //         <MainButton />
 //       </div>
-//<Footer
-//      url="https://www.adalab.es"
-//      foto={logoAdalab}
+//       <Footer
+//        url="https://www.adalab.es"
+//        foto={logoAdalab}
 //        title="Awesome profile-cards @ Sense.JS 2019"
 //      />
 //     </main>
@@ -109,48 +109,48 @@ function App() {
               </div>
             </main>
           </section>
-        </main>
-      </section>
-      <section class="editor_form js-form">
-        <section class="design_section js-collapsible">
-          <Collapsibles
-            icon="legend_icon far fa-object-ungroup"
-            title="Diseña"
-            arrow="fas fas fa-chevron-up legend_arrow"
-          >
-            <PalettesContainer></PalettesContainer>
-          </Collapsibles>
-        </section>
-        <section class="fill-in_section js-collapsible">
-          <Collapsibles
-            icon="far fa-keyboard legend_icon"
-            title="Rellena"
-            arrow="fas fas fa-chevron-up legend_arrow"
-          ></Collapsibles>
+          <section class="editor_form js-form">
+            <section class="design_section js-collapsible">
+              <Collapsibles
+                icon="legend_icon far fa-object-ungroup"
+                title="Diseña"
+                arrow="fas fas fa-chevron-up legend_arrow"
+              >
+                <PalettesContainer></PalettesContainer>
+              </Collapsibles>
+            </section>
+            <section class="fill-in_section js-collapsible">
+              <Collapsibles
+                icon="far fa-keyboard legend_icon"
+                title="Rellena"
+                arrow="fas fas fa-chevron-up legend_arrow"
+              ></Collapsibles>
 
-          <div class="js-collapsible-content">
-            <div class="fill-in_items">
-              <InputContainer />
-            </div>
-          </div>
-        </section>
-        <section class="share-section js-collapsible">
-          <Collapsibles
-            icon="legend_icon fas fa-share-alt"
-            title="Comparte"
-            arrow="fas fas fa-chevron-up legend_arrow"
-          ></Collapsibles>
-          <div class="js-collapsible-content">
-            <div class="share_button">
-              <button type="submit" class="share_button_img">
-                {" "}
-                <i class="share_button_img_icon far fa-address-card"></i>
-                Crear tarjeta
-              </button>
-            </div>
-          </div>
-          <ShareButton />
-        </section>
+              <div class="js-collapsible-content">
+                <div class="fill-in_items">
+                  <InputContainer />
+                </div>
+              </div>
+            </section>
+            <section class="share-section js-collapsible">
+              <Collapsibles
+                icon="legend_icon fas fa-share-alt"
+                title="Comparte"
+                arrow="fas fas fa-chevron-up legend_arrow"
+              ></Collapsibles>
+              <div class="js-collapsible-content">
+                <div class="share_button">
+                  <button type="submit" class="share_button_img">
+                    {" "}
+                    <i class="share_button_img_icon far fa-address-card"></i>
+                    Crear tarjeta
+                  </button>
+                </div>
+              </div>
+            </section>
+            <Share />
+          </section>
+        </main>
       </section>
       <Footer
         url="https://www.adalab.es"
