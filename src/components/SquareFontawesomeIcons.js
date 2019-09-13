@@ -1,5 +1,6 @@
 import React from "react";
 import SquareFontawesomeIconsChilds from "./SquareFontawesomeIconsChilds.js";
+import "../stylesheets/scss/components/SquareFontawesomeIcons.scss";
 
 const SquareFontawesomeIcons = props => {
   return (
