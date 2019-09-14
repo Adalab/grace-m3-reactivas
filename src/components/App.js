@@ -47,7 +47,6 @@ function App() {
             <main class="card_content palette1">
               <div class="container">
                 <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-
                 <CardPreview fullnameClass="js-name card_name" fullname="Nombre Apellido" jobClass="js-job card_job" jobCard="Front-end developer" imageCard="card_img js__profile-image" />
               </div>
             </main>
