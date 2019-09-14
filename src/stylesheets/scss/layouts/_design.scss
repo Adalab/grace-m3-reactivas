@@ -1,12 +1,12 @@
-.design_palette-description {
-  color: $color-dark-gray;
-  font-family: $primary-Font;
-  font-size: 14px;
-  text-transform: uppercase;
-  width: 62px;
-  height: 19px;
-  margin-left: 10px;
-}
+// .design_palette-description {
+//   color: $color-dark-gray;
+//   font-family: $primary-Font;
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   width: 62px;
+//   height: 19px;
+//   margin-left: 10px;
+// }
 .form_item {
   margin-right: 10px;
   display: none;
@@ -26,11 +26,11 @@ input[type="radio"]:checked + label {
   border-radius: 50%;
   border: 6px solid $color-deep-blue;
 }
-.tittlePalettes {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px $color-lighter-gray;
-}
+// .tittlePalettes {
+//   display: flex;
+//   justify-content: space-between;
+//   border-bottom: solid 1px $color-lighter-gray;
+// }
 .design_palette-option {
   display: flex;
   flex-direction: row;

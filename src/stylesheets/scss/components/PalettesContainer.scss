@@ -1,0 +1,17 @@
+@import "../core/variables";
+
+.tittlePalettes {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px $color-lighter-gray;
+}
+
+.design_palette-description {
+  color: $color-dark-gray;
+  font-family: $primary-Font;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 62px;
+  height: 19px;
+  margin-left: 10px;
+}
