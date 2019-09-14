@@ -1,5 +1,5 @@
-// @import 'core/reset';
-// @import 'core/variables';
+@import '../core/variables';
+@import '../core/reset';
 
 .card_content {
   display: flex;
@@ -89,26 +89,26 @@
     background-size: cover;
     background-position: center;
   }
-  &_footer_list {
-    list-style: none;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(4, 32px);
-    text-align: center;
-    margin: 10px 0 12px 20px;
-  }
-  &_footer_item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-  }
-  &_link {
-    text-decoration: none;
-  }
+  // &_footer_list {
+  //   list-style: none;
+  //   display: grid;
+  //   grid-gap: 10px;
+  //   grid-template-columns: repeat(4, 32px);
+  //   text-align: center;
+  //   margin: 10px 0 12px 20px;
+  // }
+  // &_footer_item {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-size: 18px;
+  //   width: 32px;
+  //   height: 32px;
+  //   border-radius: 16px;
+  // }
+  // &_link {
+  //   text-decoration: none;
+  // }
 }
 .palette1 {
   .card_header {
