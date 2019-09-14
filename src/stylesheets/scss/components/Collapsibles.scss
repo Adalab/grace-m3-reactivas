@@ -1,3 +1,5 @@
+@import "../core/variables";
+
 .legend {
   width: 100%;
   height: 50px;
@@ -33,3 +35,15 @@
     }
   }
 }
+
+// .js-collapsible {
+//   &-trigger {
+//     cursor: pointer;
+//   }
+//   &-content {
+//     display: none;
+//   }
+//   &-open .js-collapsible-content {
+//     display: block;
+//   }
+// }

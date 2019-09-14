@@ -34,7 +34,8 @@
 ////
 
 import React from "react";
-import "../stylesheets/scss/main.scss";
+// import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/components/Collapsibles.scss";
 
 const Collapsibles = props => {
   return (
