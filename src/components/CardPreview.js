@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLinkCardPreview from './SocialLinkCardPreview.js';
+import '../stylesheets/scss/components/CardPreview.scss';
 
 class CardPreview extends React.Component {
   render() {
