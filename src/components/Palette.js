@@ -12,7 +12,7 @@ class Palette extends React.Component {
 
   updateCheckboxColor(event) {
     this.props.handleUpdateCheckboxColor(this.props);
-    // esto es un lifting?
+
     // aqui falta la función
     // this.setState({ [event.target.name]: event.target.value });
   }
