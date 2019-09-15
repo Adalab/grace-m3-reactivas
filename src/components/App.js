@@ -1,20 +1,20 @@
 import React from "react";
 import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
-import "../stylesheets/scss/main.scss";
 import Header from "./Header";
-import InputContainer from "./InputContainer.js";
 // import MainButton from "./MainButton";
-import ResetButton from "./ResetButton";
 // import Share from "./Share";
+// import "../stylesheets/scss/main.scss";
+import InputContainer from "./InputContainer.js";
+import ResetButton from "./ResetButton";
+import ShareButton from "./ShareButton";
 import Collapsibles from "./Collapsibles.js";
 // import MainDescription from "./MainDescription";
 // import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
-import ShareButton from "./ShareButton";
 
-//function App() {
+// function App() {
 //   return (
 //     <main className="main">
 //       <div className="main_content">

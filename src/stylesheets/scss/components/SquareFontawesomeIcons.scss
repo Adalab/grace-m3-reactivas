@@ -1,0 +1,21 @@
+@import "../core/variables";
+
+.main {
+  &_actions {
+    border: 1.6px solid $color-border-landing;
+    border-radius: 4px;
+    width: 268px;
+    height: 74px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 7px;
+    margin-top: 18px;
+    @media all and (min-width: $width-tablet) {
+      width: 325px;
+      height: 86px;
+      margin-top: 27px;
+      padding-top: 10px;
+    }
+  }
+}
