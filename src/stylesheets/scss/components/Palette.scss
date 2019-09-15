@@ -1,12 +1,10 @@
-.design_palette-description {
-  color: $color-dark-gray;
-  font-family: $primary-Font;
-  font-size: 14px;
-  text-transform: uppercase;
-  width: 62px;
-  height: 19px;
-  margin-left: 10px;
+@import "../core/variables";
+
+.design_palette-option {
+  display: flex;
+  flex-direction: row;
 }
+
 .form_item {
   margin-right: 10px;
   display: none;
@@ -19,21 +17,13 @@
   border: 1px solid $color-lighter-gray;
   margin-right: 10px;
 }
+
 input[type="radio"]:checked + label {
   width: 17px;
   height: 17px;
   background-color: $color-white;
   border-radius: 50%;
   border: 6px solid $color-deep-blue;
-}
-.tittlePalettes {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px $color-lighter-gray;
-}
-.design_palette-option {
-  display: flex;
-  flex-direction: row;
 }
 
 .item {

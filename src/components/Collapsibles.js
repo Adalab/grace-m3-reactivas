@@ -34,7 +34,7 @@
 ////
 
 import React from "react";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/components/Collapsibles.scss";
 
 const Collapsibles = props => {
   return (
@@ -52,5 +52,3 @@ const Collapsibles = props => {
 export default Collapsibles;
 
 // Las funciones no tienen This, y es un dummie y nos pasa los datos como argumento, no tienen estado, no tiene ciclo de vida
-
-//siempre vamos a utilizar un componente dummie a no ser que tenga estado o ciclo de vida

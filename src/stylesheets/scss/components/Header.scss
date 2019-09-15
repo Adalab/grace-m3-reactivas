@@ -1,3 +1,5 @@
+@import "../core/variables";
+
 .header {
   @media all and (min-width: $width-tablet) {
     width: 768px;
