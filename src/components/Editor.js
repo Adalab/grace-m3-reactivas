@@ -36,6 +36,13 @@ class Editor extends React.Component {
     );
     console.log(this.state);
   };
+  updatePreviewEmail() {
+    if (this.state.userEmail === '') {
+      return '';
+    } else {
+      return `{mailto:${this.state.userEmail}}`;
+    }
+  }
 
   updatePreviewName() {
     if (this.state.userFullName === '') {
@@ -51,6 +58,20 @@ class Editor extends React.Component {
       return `${this.state.userJob}`;
     }
   }
+  updatePreviewLinkedin() {
+    if (this.state.userLinkedin === '') {
+      return '';
+    } else {
+      return `{www.linkedin/in/${this.state.userLinkedin}}`;
+    }
+  }
+  updatePreviewGithub() {
+    if (this.state.userGithub === '') {
+      return '';
+    } else {
+      return `{www.github.com/${this.state.userGithub}}`;
+    }
+  }
 
   render() {
     return (
@@ -62,7 +83,7 @@ class Editor extends React.Component {
               <main class="card_content palette1">
                 <div class="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" />
+                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
@@ -77,7 +98,7 @@ class Editor extends React.Component {
 
                 <div class="js-collapsible-content">
                   <div class="fill-in_items">
-                    <InputContainer updateEventInfo={this.updateEventInfo} />
+                    <InputContainer updateEventInfo={this.updateEventInfo} state={this.state} />
                   </div>
                 </div>
               </section>
