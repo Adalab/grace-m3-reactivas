@@ -6,8 +6,8 @@ const Footer = props => {
     <footer className="footer">
       <small className="footer_small">{props.title}</small>
       <a
-        className="footer_link"
         href={props.url}
+        className="footer_link"
         target="_blank"
         rel="noopener noreferrer"
       >
