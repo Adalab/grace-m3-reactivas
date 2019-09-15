@@ -1,0 +1,26 @@
+@import "../core/variables";
+
+.card_button-reset {
+    align-self: initial;
+    height: 30px;
+    font-size: 12px;
+    line-height: 1.67;
+    text-transform: uppercase;
+    color: $color-dark-gray;
+    background-color: transparent;
+    border: 1px solid $color-white;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    outline: none;
+    transition-duration: 0.2s;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-light-grey-2;
+    }
+
+    .trash_icon {
+        margin-right: 8px;
+    }
+}
