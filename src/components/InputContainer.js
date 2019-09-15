@@ -7,10 +7,9 @@ class InputContainer extends React.Component {
     super(props);
     this.updateUserInfo = this.updateUserInfo.bind(this);
   }
-
-  updateUserInfo(event, props) {
-    const userInfo = event.target.value;
-    const key = event.target.name;
+  updateUserInfo(event) {
+    let key = event.currentTarget.name;
+    let userInfo = event.target.value;
     this.setState(
       {
         [key]: `${userInfo}`,
@@ -19,7 +18,7 @@ class InputContainer extends React.Component {
         console.log(this.state);
       }
     );
-    console.log(this.state);
+
     return this.state;
   }
 

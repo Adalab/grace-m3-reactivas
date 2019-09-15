@@ -40,12 +40,8 @@ class App extends React.Component {
       userLinkedin: '',
       userGithub: '',
     };
-    setInterval(this.updatePreview, 1000);
   }
 
-  updatePreview() {
-    console.log(this.state);
-  }
   render() {
     return (
       <div>
