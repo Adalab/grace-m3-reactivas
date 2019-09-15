@@ -6,12 +6,13 @@ import Header from "./Header";
 import InputContainer from "./InputContainer.js";
 // import MainButton from "./MainButton";
 import ResetButton from "./ResetButton";
-import Share from "./Share";
+// import Share from "./Share";
 import Collapsibles from "./Collapsibles.js";
 // import MainDescription from "./MainDescription";
 // import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
+import ShareButton from "./ShareButton";
 
 //function App() {
 //   return (
@@ -44,7 +45,7 @@ function App() {
           <section class="editor_card">
             <main class="card_content palette1">
               <div class="container">
-                <ResetButton />
+                <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
                 <div class="card js-card">
                   <div class="card_header">
                     <h1
@@ -148,7 +149,16 @@ function App() {
                 </div>
               </div>
             </section>
-            <Share />
+            <div className="completed_content hidden">
+              <h3 className="completed_content_title">
+                La tarjeta ha sido creada:
+              </h3>
+              <a href="#" className="completed_content_url" target="_self"></a>
+              <ShareButton
+                icon="completed_content_button_icon fab fa-twitter"
+                name="Compartir en twitter"
+              />
+            </div>
           </section>
         </main>
       </section>
