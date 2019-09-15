@@ -1,25 +1,36 @@
-import React from 'react';
-import '../stylesheets/scss/main.scss';
+import React from "react";
+import "../stylesheets/scss/components/ImageInput.scss";
 
 class ImageInput extends React.Component {
-	render() {
-		return (
-			<div className="fill-in_item">
-				<label className="fill-in_label" htmlFor="img-profile">
-					{this.props.name}
-				</label>
+  render() {
+    return (
+      <div className="fill-in_item">
+        <label className="fill-in_label" htmlFor="img-profile">
+          {this.props.name}
+        </label>
 
-				<div className="fill-in_buttonImg-wrapper">
-					<input className={this.props.classRealButton} id="img-profile" type="button" value={this.props.valueInput} name="img-profile" />
-					<input name="photo" type="file" id="img-selector" className="action_hiddenField js__profile-upload-btn" />
-					<div
-						className={this.props.displayPicture}
-						// style={this.getPreview(isAvatarDefault, avatar)}
-					></div>
-				</div>
-			</div>
-		);
-	}
+        <div className="fill-in_buttonImg-wrapper">
+          <input
+            className={this.props.classRealButton}
+            id="img-profile"
+            type="button"
+            value={this.props.valueInput}
+            name="img-profile"
+          />
+          <input
+            name="photo"
+            type="file"
+            id="img-selector"
+            className="action_hiddenField js__profile-upload-btn"
+          />
+          <div
+            className={this.props.displayPicture}
+            // style={this.getPreview(isAvatarDefault, avatar)}
+          ></div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ImageInput;

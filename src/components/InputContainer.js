@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './Inputs';
 import ImageInput from './ImageInput';
+import '../stylesheets/scss/components/ImageInput.scss';
 
 class InputContainer extends React.Component {
   constructor(props) {

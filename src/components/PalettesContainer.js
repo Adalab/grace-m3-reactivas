@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/scss/main.scss';
+import '../stylesheets/scss/components/PalettesContainer.scss';
 import Palette from './Palette';
 
 const PalettesContainer = props => {
@@ -18,3 +18,5 @@ const PalettesContainer = props => {
 };
 
 export default PalettesContainer;
+
+// Falta introducir props en el título (Colores)
