@@ -5,25 +5,11 @@ import ImageInput from './ImageInput';
 class InputContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.updateUserInfo = this.updateUserInfo.bind(this);
-  }
-  updateUserInfo(event) {
-    let key = event.currentTarget.name;
-    let userInfo = event.target.value;
-    this.setState(
-      {
-        [key]: `${userInfo}`,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
-
-    return this.state;
+    // this.updateUserInfo = this.updateUserInfo.bind(this);
   }
 
   render() {
-    const actionToPerform = this.updateUserInfo;
+    const actionToPerform = this.props.updateEventInfo;
 
     return (
       <div>

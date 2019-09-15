@@ -29,6 +29,7 @@ import CardPreview from './CardPreview';
 //     </main>
 //   );
 // }
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,10 +42,23 @@ class App extends React.Component {
       userGithub: '',
     };
   }
-
+  updateEventInfo = event => {
+    let key = event.currentTarget.name;
+    let userInfo = event.target.value;
+    this.setState(
+      {
+        [key]: `${userInfo}`,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+    console.log(this.state);
+  };
   render() {
     return (
       <div>
+        <p>{this.state.userFullName}</p>
         <div className="header">
           <div className="header_container">
             {' '}
@@ -59,7 +73,7 @@ class App extends React.Component {
               <main className="card_content palette1">
                 <div className="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-                  <CardPreview fullnameClass="js-name card_name" fullname="Nombre Apellido" jobClass="js-job card_job" jobCard="Front-end developer" imageCard="card_img js__profile-image" />
+                  <CardPreview fullnameClass="js-name card_name" fullname={this.state.userFullName} jobClass="js-job card_job" jobCard={this.state.userJob} imageCard="card_img js__profile-image" />
                 </div>
               </main>
             </section>
@@ -74,7 +88,7 @@ class App extends React.Component {
 
                 <div className="js-collapsible-content">
                   <div className="fill-in_items">
-                    <InputContainer />
+                    <InputContainer updateEventInfo={this.updateEventInfo} />
                   </div>
                 </div>
               </section>
