@@ -13,6 +13,7 @@ import Collapsibles from "./Collapsibles.js";
 // import SquareFontawesomeIcons from "./SquareFontawesomeIcons.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
+import CardPreview from "./CardPreview";
 
 // function App() {
 //   return (
@@ -46,67 +47,13 @@ function App() {
             <main class="card_content palette1">
               <div class="container">
                 <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-                <div class="card js-card">
-                  <div class="card_header">
-                    <h1
-                      class="js-name card_name"
-                      data-placeholder="Nombre Apellido"
-                    >
-                      nombre apellido
-                    </h1>
-
-                    <p
-                      class="js-job card_job"
-                      data-placeholder="Front-end developer"
-                    >
-                      Front-end developer
-                    </p>
-                  </div>
-                  <div class="card_img js__profile-image"></div>
-                  <ul class="card_footer_list">
-                    <li class="card_footer_item">
-                      {" "}
-                      <a class="js-phone card_link" href="" target="_blank">
-                        <i class="fas fa-mobile-alt"></i>
-                      </a>
-                    </li>
-                    <li class="card_footer_item">
-                      {" "}
-                      <a
-                        class="js-email card_link"
-                        href=""
-                        data-prefix="mailto:"
-                        target="_blank"
-                      >
-                        <i class="far fa-envelope"></i>
-                      </a>
-                    </li>
-                    <li class="card_footer_item">
-                      {" "}
-                      <a
-                        class="js-linkedin card_link"
-                        href=""
-                        data-placeholder=""
-                        data-prefix="https://www.linkedin.com/in/"
-                        target="_blank"
-                      >
-                        <i class="fab fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                    <li class="card_footer_item">
-                      {" "}
-                      <a
-                        class="js-github card_link"
-                        href=""
-                        data-placeholder=""
-                        data-prefix="https://github.com/"
-                        target="_blank"
-                      >
-                        <i class="fab fa-github-alt"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <CardPreview
+                  fullnameClass="js-name card_name"
+                  fullname="Nombre Apellido"
+                  jobClass="js-job card_job"
+                  jobCard="Front-end developer"
+                  imageCard="card_img js__profile-image"
+                />
               </div>
             </main>
           </section>

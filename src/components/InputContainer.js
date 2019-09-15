@@ -6,13 +6,7 @@ class InputContainer extends React.Component {
   render() {
     return (
       <div>
-		<Input 
-		type="text" 
-		id="full_name" 
-		label="Nombre completo" 
-		classInput="js-name" 
-		name="name" 
-		placeholder="Hermione Granger" />
+        <Input type="text" id="full_name" label="Nombre completo" classInput="js-name" name="name" placeholder="Hermione Granger" />
 
         <Input type="text" id="job" label="Puesto" classInput="js-job" name="job" placeholder="Front-end developer" />
 
