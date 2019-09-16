@@ -15,18 +15,27 @@ class Editor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: ""
+      palette: "1"
     };
+
+    this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
+  }
+
+  updateCheckboxColor(event) {
+    const paletteSelected = event.target.value;
+    this.setState({ palette: `${paletteSelected}` });
+    console.log(this.state.palette);
   }
 
   render() {
+    const classColor = `card_content palette${this.state.palette}`;
     return (
       <div>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
         <section class="editor_container">
           <main class="editor_main">
             <section class="editor_card">
-              <main class="card_content palette1">
+              <main class={classColor}>
                 <div class="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
                   <CardPreview fullnameClass="js-name card_name" fullname="Nombre Apellido" jobClass="js-job card_job" jobCard="Front-end developer" imageCard="card_img js__profile-image" />
@@ -36,7 +45,7 @@ class Editor extends React.Component {
             <section class="editor_form js-form">
               <section class="design_section js-collapsible">
                 <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
-                  <PalettesContainer></PalettesContainer>
+                  <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
                 </Collapsibles>
               </section>
               <section class="fill-in_section js-collapsible">
