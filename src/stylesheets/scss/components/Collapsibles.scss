@@ -1,4 +1,4 @@
-@import "../core/variables";
+@import "../core/Variables";
 
 .legend {
   width: 100%;
@@ -36,14 +36,3 @@
   }
 }
 
-// .js-collapsible {
-//   &-trigger {
-//     cursor: pointer;
-//   }
-//   &-content {
-//     display: none;
-//   }
-//   &-open .js-collapsible-content {
-//     display: block;
-//   }
-// }
