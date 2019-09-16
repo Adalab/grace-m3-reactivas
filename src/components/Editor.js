@@ -42,7 +42,7 @@ class Editor extends React.Component {
     if (this.state.userEmail === "") {
       return "";
     } else {
-      return `{mailto:${this.state.userEmail}}`;
+      return `mailto:${this.state.userEmail}`;
     }
   }
 
@@ -64,14 +64,14 @@ class Editor extends React.Component {
     if (this.state.userLinkedin === "") {
       return "";
     } else {
-      return `{www.linkedin/in/${this.state.userLinkedin}}`;
+      return `https://www.linkedin.com/in/${this.state.userLinkedin}`;
     }
   }
   updatePreviewGithub() {
     if (this.state.userGithub === "") {
       return "";
     } else {
-      return `{www.github.com/${this.state.userGithub}}`;
+      return `https://www.github.com/${this.state.userGithub}`;
     }
   }
 
@@ -85,30 +85,62 @@ class Editor extends React.Component {
     const classColor = `card_content palette${this.state.palette}`;
     return (
       <div>
-        <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
+        <Header
+          url="/"
+          foto={awesomeProfilePic}
+          destiny="_self"
+          alt="Awesome Profile Cards"
+        />
         <section class="editor_container">
           <main class="editor_main">
             <section class="editor_card">
               <main class={classColor}>
                 <div class="container">
-                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
+                  <ResetButton
+                    icon="far fa-trash-alt trash_icon"
+                    name="Reset"
+                  />
+                  <CardPreview
+                    fullnameClass="js-name card_name"
+                    fullname={this.updatePreviewName()}
+                    jobClass="js-job card_job"
+                    jobCard={this.updatePreviewJob()}
+                    imageCard="card_img js__profile-image"
+                    userPhone={this.state.userPhone}
+                    userEmail={this.updatePreviewEmail()}
+                    linkedinLink={this.updatePreviewLinkedin()}
+                    githubLink={this.updatePreviewGithub()}
+                  />
                 </div>
               </main>
             </section>
             <section class="editor_form js-form">
               <section class="design_section js-collapsible">
-                <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
-                  <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
+                <Collapsibles
+                  icon="legend_icon far fa-object-ungroup"
+                  title="Diseña"
+                  arrow="fas fas fa-chevron-up legend_arrow"
+                >
+                  <PalettesContainer
+                    updateCheckboxColor={this.updateCheckboxColor}
+                  ></PalettesContainer>
                 </Collapsibles>
               </section>
               <section class="fill-in_section js-collapsible">
-                <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
+                <Collapsibles
+                  icon="far fa-keyboard legend_icon"
+                  title="Rellena"
+                  arrow="fas fas fa-chevron-up legend_arrow"
+                >
                   <InputContainer updateEventInfo={this.updateEventInfo} />
                 </Collapsibles>
               </section>
               <section class="share-section js-collapsible">
-                <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
+                <Collapsibles
+                  icon="legend_icon fas fa-share-alt"
+                  title="Comparte"
+                  arrow="fas fas fa-chevron-up legend_arrow"
+                >
                   <div class="js-collapsible-content">
                     <div class="share_button">
                       <button type="submit" class="share_button_img">
@@ -119,16 +151,29 @@ class Editor extends React.Component {
                     </div>
                   </div>
                   <div className="completed_content hidden">
-                    <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
-                    <a href="#" className="completed_content_url" target="_self" />
-                    <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
+                    <h3 className="completed_content_title">
+                      La tarjeta ha sido creada:
+                    </h3>
+                    <a
+                      href="#"
+                      className="completed_content_url"
+                      target="_self"
+                    />
+                    <ShareButton
+                      icon="completed_content_button_icon fab fa-twitter"
+                      name="Compartir en twitter"
+                    />
                   </div>
                 </Collapsibles>
               </section>
             </section>
           </main>
         </section>
-        <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
+        <Footer
+          url="https://www.adalab.es"
+          foto={logoAdalab}
+          title="Awesome profile-cards @ Sense.JS 2019"
+        />
       </div>
     );
   }
