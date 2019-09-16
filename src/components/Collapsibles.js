@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/components/_Collapsibles.scss";
 
 class Collapsibles extends React.Component {
 
