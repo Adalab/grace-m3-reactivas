@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logoAdalab from "../images/logo-adalab-80px.png";
-import awesomeProfilePic from "../images/tarjetas-molonas.svg";
-import Header from "./Header";
-import InputContainer from "./InputContainer.js";
-import ResetButton from "./ResetButton";
-import ShareButton from "./ShareButton";
-import Collapsibles from "./Collapsibles.js";
-import PalettesContainer from "./PalettesContainer.js";
-import Footer from "./Footer";
-import CardPreview from "./CardPreview";
+import React from 'react';
+import {Link} from 'react-router-dom';
+import logoAdalab from '../images/logo-adalab-80px.png';
+import awesomeProfilePic from '../images/tarjetas-molonas.svg';
+import Header from './Header';
+import InputContainer from './InputContainer.js';
+import ResetButton from './ResetButton';
+import ShareButton from './ShareButton';
+import Collapsibles from './Collapsibles.js';
+import PalettesContainer from './PalettesContainer.js';
+import Footer from './Footer';
+import CardPreview from './CardPreview';
 
 class Editor extends React.Component {
   constructor(props) {
@@ -22,13 +22,13 @@ class Editor extends React.Component {
 
   getInitialState() {
     return {
-      userFullName: "",
-      userJob: "",
-      userPhone: "",
-      userEmail: "",
-      userLinkedin: "",
-      userGithub: "",
-      palette: "1"
+      userFullName: '',
+      userJob: '',
+      userPhone: '',
+      userEmail: '',
+      userLinkedin: '',
+      userGithub: '',
+      palette: '1',
     };
   }
 
@@ -37,43 +37,43 @@ class Editor extends React.Component {
     let userInfo = event.target.value;
     this.setState(
       {
-        [key]: `${userInfo}`
+        [key]: `${userInfo}`,
       },
       this.saveData
     );
   };
   updatePreviewEmail() {
-    if (this.state.userEmail === "") {
-      return "";
+    if (this.state.userEmail === '') {
+      return '';
     } else {
       return `mailto:${this.state.userEmail}`;
     }
   }
 
   updatePreviewName() {
-    if (this.state.userFullName === "") {
-      return "Nombre y Apellidos";
+    if (this.state.userFullName === '') {
+      return 'Nombre y Apellidos';
     } else {
       return `${this.state.userFullName}`;
     }
   }
   updatePreviewJob() {
-    if (this.state.userJob === "") {
-      return "Front end developer";
+    if (this.state.userJob === '') {
+      return 'Front end developer';
     } else {
       return `${this.state.userJob}`;
     }
   }
   updatePreviewLinkedin() {
-    if (this.state.userLinkedin === "") {
-      return "";
+    if (this.state.userLinkedin === '') {
+      return '';
     } else {
       return `https://www.linkedin.com/in/${this.state.userLinkedin}`;
     }
   }
   updatePreviewGithub() {
-    if (this.state.userGithub === "") {
-      return "";
+    if (this.state.userGithub === '') {
+      return '';
     } else {
       return `https://www.github.com/${this.state.userGithub}`;
     }
@@ -81,15 +81,15 @@ class Editor extends React.Component {
 
   updateCheckboxColor(event) {
     const paletteSelected = event.target.value;
-    this.setState({ palette: `${paletteSelected}` }, this.saveData);
+    this.setState({palette: `${paletteSelected}`}, this.saveData);
   }
 
   saveData() {
-    localStorage.setItem("info", JSON.stringify(this.state));
+    localStorage.setItem('info', JSON.stringify(this.state));
   }
 
   getData() {
-    return JSON.parse(localStorage.getItem("info"));
+    return JSON.parse(localStorage.getItem('info'));
   }
 
   render() {
@@ -115,7 +115,7 @@ class Editor extends React.Component {
               </section>
               <section class="fill-in_section js-collapsible">
                 <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
-                  <InputContainer updateEventInfo={this.updateEventInfo} />
+                  <InputContainer updateEventInfo={this.updateEventInfo} data={this.state} />
                 </Collapsibles>
               </section>
               <section class="share-section js-collapsible">
@@ -123,7 +123,7 @@ class Editor extends React.Component {
                   <div class="js-collapsible-content">
                     <div class="share_button">
                       <button type="submit" class="share_button_img">
-                        {" "}
+                        {' '}
                         <i class="share_button_img_icon far fa-address-card" />
                         Crear tarjeta
                       </button>
