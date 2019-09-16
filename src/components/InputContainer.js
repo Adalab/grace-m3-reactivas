@@ -4,7 +4,14 @@ import ImageInput from './ImageInput';
 import '../stylesheets/scss/components/ImageInput.scss';
 
 class InputContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.updateUserInfo = this.updateUserInfo.bind(this);
+  }
+
   render() {
+    const actionToPerform = this.props.updateEventInfo;
+
     return (
       <div>
         <Input type="text" idLabel="full_name" idInput="full_name" label="Nombre completo" classnameinput="js-name" name="name" placeholder="Hermione Granger" />
