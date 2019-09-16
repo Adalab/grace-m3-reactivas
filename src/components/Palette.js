@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import "../stylesheets/scss/components/PalettesContainer.scss";
-import "../stylesheets/scss/components/Palette.scss";
+import '../stylesheets/scss/components/PalettesContainer.scss';
+import '../stylesheets/scss/components/Palette.scss';
 
 class Palette extends React.Component {
   constructor(props) {

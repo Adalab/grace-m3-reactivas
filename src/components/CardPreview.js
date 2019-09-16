@@ -1,8 +1,13 @@
 import React from "react";
 import SocialLinkCardPreview from "./SocialLinkCardPreview.js";
 import "../stylesheets/scss/components/CardPreview.scss";
+import Input from "./Inputs";
 
 class CardPreview extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="card js-card ">

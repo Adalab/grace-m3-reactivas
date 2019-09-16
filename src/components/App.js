@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Editor from "./Editor";
-import Landing from "./Landing";
+import React from 'react';
+import {Route, Switch} from 'react-router-dom';
+import Editor from './Editor';
+import Landing from './Landing';
 
 class App extends React.Component {
   render() {
