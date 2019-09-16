@@ -1,7 +1,7 @@
 import React from "react";
 import logoAdalab from "../images/logo-adalab-80px.png";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
-import Header from "./Header";
+import Header from "./Header.js";
 // import MainButton from "./MainButton";
 // import Share from "./Share";
 // import "../stylesheets/scss/main.scss";
