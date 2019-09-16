@@ -57,7 +57,6 @@ class Editor extends React.Component {
   updateCheckboxColor(event) {
     const paletteSelected = event.target.value;
     this.setState({ palette: `${paletteSelected}` });
-    console.log(this.state.palette);
   }
 
   render() {
