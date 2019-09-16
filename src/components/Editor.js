@@ -38,6 +38,13 @@ class Editor extends React.Component {
     );
     console.log(this.state);
   };
+  updatePreviewEmail() {
+    if (this.state.userEmail === "") {
+      return "";
+    } else {
+      return `{mailto:${this.state.userEmail}}`;
+    }
+  }
 
   updatePreviewName() {
     if (this.state.userFullName === "") {
@@ -51,6 +58,20 @@ class Editor extends React.Component {
       return "Front end developer";
     } else {
       return `${this.state.userJob}`;
+    }
+  }
+  updatePreviewLinkedin() {
+    if (this.state.userLinkedin === "") {
+      return "";
+    } else {
+      return `{www.linkedin/in/${this.state.userLinkedin}}`;
+    }
+  }
+  updatePreviewGithub() {
+    if (this.state.userGithub === "") {
+      return "";
+    } else {
+      return `{www.github.com/${this.state.userGithub}}`;
     }
   }
 
@@ -71,7 +92,7 @@ class Editor extends React.Component {
               <main class={classColor}>
                 <div class="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
-                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" />
+                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
@@ -82,36 +103,32 @@ class Editor extends React.Component {
                 </Collapsibles>
               </section>
               <section class="fill-in_section js-collapsible">
-                <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow"></Collapsibles>
-
-                <div class="js-collapsible-content">
-                  <div class="fill-in_items">
-                    <InputContainer updateEventInfo={this.updateEventInfo} />
-                  </div>
-                </div>
+                <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
+                  <InputContainer updateEventInfo={this.updateEventInfo} />
+                </Collapsibles>
               </section>
               <section class="share-section js-collapsible">
-                <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow"></Collapsibles>
-                <div class="js-collapsible-content">
-                  <div class="share_button">
-                    <button type="submit" class="share_button_img">
-                      {" "}
-                      <i class="share_button_img_icon far fa-address-card"></i>
-                      Crear tarjeta
-                    </button>
+                <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
+                  <div class="js-collapsible-content">
+                    <div class="share_button">
+                      <button type="submit" class="share_button_img">
+                        {" "}
+                        <i class="share_button_img_icon far fa-address-card" />
+                        Crear tarjeta
+                      </button>
+                    </div>
                   </div>
-                </div>
+                  <div className="completed_content hidden">
+                    <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
+                    <a href="#" className="completed_content_url" target="_self" />
+                    <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
+                  </div>
+                </Collapsibles>
               </section>
-              <div className="completed_content hidden">
-                <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
-                <a href="" className="completed_content_url" target="_self"></a>
-                <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
-              </div>
             </section>
           </main>
         </section>
         <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
-        <main></main>
       </div>
     );
   }
