@@ -1,6 +1,6 @@
-import React from "react";
-import "../stylesheets/scss/components/PalettesContainer.scss";
-import Palette from "./Palette";
+import React from 'react';
+import '../stylesheets/scss/components/PalettesContainer.scss';
+import Palette from './Palette';
 
 const PalettesContainer = props => {
   return (
