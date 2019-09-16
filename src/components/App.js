@@ -72,11 +72,12 @@ function App() {
                 icon="far fa-keyboard legend_icon"
                 title="Rellena"
                 arrow="fas fas fa-chevron-up legend_arrow"
-              ></Collapsibles>
+              >
+                <InputContainer />
+              </Collapsibles>
 
               <div class="js-collapsible-content">
                 <div class="fill-in_items">
-                  <InputContainer />
                 </div>
               </div>
             </section>
@@ -85,27 +86,28 @@ function App() {
                 icon="legend_icon fas fa-share-alt"
                 title="Comparte"
                 arrow="fas fas fa-chevron-up legend_arrow"
-              ></Collapsibles>
-              <div class="js-collapsible-content">
-                <div class="share_button">
-                  <button type="submit" class="share_button_img">
-                    {" "}
-                    <i class="share_button_img_icon far fa-address-card"></i>
-                    Crear tarjeta
+              >
+                <div class="js-collapsible-content">
+                  <div class="share_button">
+                    <button type="submit" class="share_button_img">
+                      {" "}
+                      <i class="share_button_img_icon far fa-address-card"></i>
+                      Crear tarjeta
                   </button>
+                  </div>
                 </div>
-              </div>
-            </section>
-            <div className="completed_content hidden">
-              <h3 className="completed_content_title">
-                La tarjeta ha sido creada:
+                <div className="completed_content hidden">
+                  <h3 className="completed_content_title">
+                    La tarjeta ha sido creada:
               </h3>
-              <a href="#" className="completed_content_url" target="_self"></a>
-              <ShareButton
-                icon="completed_content_button_icon fab fa-twitter"
-                name="Compartir en twitter"
-              />
-            </div>
+                  <a href="#" className="completed_content_url" target="_self"></a>
+                  <ShareButton
+                    icon="completed_content_button_icon fab fa-twitter"
+                    name="Compartir en twitter"
+                  />
+                </div>
+              </Collapsibles>
+            </section>
           </section>
         </main>
       </section>
