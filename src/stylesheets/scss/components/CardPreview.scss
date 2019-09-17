@@ -14,7 +14,6 @@
     border-radius: 6px;
     height: 826px;
     margin: 20px;
-    // width: 329px;
   }
   @media all and (min-width: $width-desktop) {
     background-image: url(../../../images/city_background.png);
@@ -30,7 +29,6 @@
     margin: auto;
     position: relative;
     top: 173px;
-    // margin: 173px 45px 260px 44px;
   }
 }
 .card {
@@ -89,26 +87,7 @@
     background-size: cover;
     background-position: center;
   }
-  // &_footer_list {
-  //   list-style: none;
-  //   display: grid;
-  //   grid-gap: 10px;
-  //   grid-template-columns: repeat(4, 32px);
-  //   text-align: center;
-  //   margin: 10px 0 12px 20px;
-  // }
-  // &_footer_item {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   font-size: 18px;
-  //   width: 32px;
-  //   height: 32px;
-  //   border-radius: 16px;
-  // }
-  // &_link {
-  //   text-decoration: none;
-  // }
+  
 }
 .palette1 {
   .card_header {

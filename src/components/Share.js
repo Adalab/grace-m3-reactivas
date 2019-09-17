@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/layouts/Share.scss";
 
 function Share() {
   return (
