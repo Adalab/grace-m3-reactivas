@@ -45,19 +45,20 @@ class InputContainer extends React.Component {
           id="userPhone"
           label="Teléfono"
           classInput="js-phone"
-          value="userform"
+          name="userPhone"
           placeholder="+34 678334765"
           type="tel"
           minLength="9"
           pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
           action={actionToPerform}
         />
+
         <Input
           type="text"
           id="userEmail"
           label="Email"
           classInput="js-email"
-          value="userform"
+          name="userEmail"
           placeholder="hermione-granger@gmail.com"
           type="email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
@@ -68,7 +69,7 @@ class InputContainer extends React.Component {
           id="userLinkedin"
           label="Linkedin"
           classInput="js-linkedin"
-          value="userform"
+          name="userLinkedin"
           placeholder="hermionegranger"
           type="text"
           action={actionToPerform}
@@ -78,7 +79,7 @@ class InputContainer extends React.Component {
           id="userGithub"
           label="Github"
           classInput="js-github"
-          value="userform"
+          name="userGithub"
           placeholder="hermione-granger"
           type="text"
           action={actionToPerform}
