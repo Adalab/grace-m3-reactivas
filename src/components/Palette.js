@@ -6,8 +6,6 @@ import "../stylesheets/scss/components/Palette.scss";
 class Palette extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
   }
 
   render() {
@@ -24,11 +22,6 @@ class Palette extends React.Component {
       </section>
     );
   }
-}
-
-{
-  /* <input id="form--age" type="radio" name="age" value="A" onChange={this.handleChange} checked={this.state.age === "A" ? true : false} />
-            </label> */
 }
 
 export default Palette;
