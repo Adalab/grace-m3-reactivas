@@ -1,19 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import '../stylesheets/scss/components/PalettesContainer.scss';
-import '../stylesheets/scss/components/Palette.scss';
+import "../stylesheets/scss/components/PalettesContainer.scss";
+import "../stylesheets/scss/components/Palette.scss";
 
 class Palette extends React.Component {
   constructor(props) {
     super(props);
-
-    this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
-  }
-
-  updateCheckboxColor(event) {
-    // esta función debe estar en Editor, este es un component dummy
-    // aqui falta la función
-    // this.setState({ [event.target.name]: event.target.value });
   }
 
   render() {
@@ -30,11 +22,6 @@ class Palette extends React.Component {
       </section>
     );
   }
-}
-
-{
-  /* <input id="form--age" type="radio" name="age" value="A" onChange={this.handleChange} checked={this.state.age === "A" ? true : false} />
-            </label> */
 }
 
 export default Palette;
