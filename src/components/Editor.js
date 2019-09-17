@@ -18,6 +18,7 @@ class Editor extends React.Component {
     this.state = localStorageData === null ? this.getInitialState() : localStorageData;
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   getInitialState() {
@@ -32,8 +33,19 @@ class Editor extends React.Component {
     };
   }
 
+  clearForm() {
+    this.setState({
+      userFullName: '',
+      userJob: '',
+      userPhone: '',
+      userEmail: '',
+      userLinkedin: '',
+      userGithub: '',
+    });
+  }
+
   updateEventInfo = event => {
-    let key = event.currentTarget.name;
+    let key = event.currentTarget.id;
     let userInfo = event.target.value;
     this.setState(
       {
@@ -102,7 +114,7 @@ class Editor extends React.Component {
             <section class="editor_card">
               <main class={classColor}>
                 <div class="container">
-                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
+                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" action={this.clearForm} />
                   <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
