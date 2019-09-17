@@ -97,11 +97,11 @@ class Editor extends React.Component {
     return (
       <div>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
-        <section class="editor_container">
-          <main class="editor_main">
-            <section class="editor_card">
-              <main class={classColor}>
-                <div class="container">
+        <section className="editor_container">
+          <main className="editor_main">
+            <section className="editor_card">
+              <main className={classColor}>
+                <div className="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
                   <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
