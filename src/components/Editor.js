@@ -95,7 +95,7 @@ class Editor extends React.Component {
   render() {
     const classColor = `card_content palette${this.state.palette}`;
     return (
-      <div>
+      <React.Fragment>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
         <section className="editor_container">
           <main className="editor_main">
@@ -107,40 +107,36 @@ class Editor extends React.Component {
                 </div>
               </main>
             </section>
-            <section class="editor_form js-form">
-              <section class="design_section js-collapsible">
-                <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
-                  <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
-                </Collapsibles>
-              </section>
-              <section class="fill-in_section js-collapsible">
-                <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
-                  <InputContainer updateEventInfo={this.updateEventInfo} />
-                </Collapsibles>
-              </section>
-              <section class="share-section js-collapsible">
-                <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
-                  <div class="js-collapsible-content">
-                    <div class="share_button">
-                      <button type="submit" class="share_button_img">
-                        {" "}
-                        <i class="share_button_img_icon far fa-address-card" />
-                        Crear tarjeta
-                      </button>
-                    </div>
+            <section className="editor_form js-form">
+              <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
+                <PalettesContainer updateCheckboxColor={this.updateCheckboxColor} title="Colores"></PalettesContainer>
+              </Collapsibles>
+
+              <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
+                <InputContainer updateEventInfo={this.updateEventInfo} />
+              </Collapsibles>
+
+              <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
+                <div className="js-collapsible-content">
+                  <div className="share_button">
+                    <button type="submit" className="share_button_img">
+                      {" "}
+                      <i className="share_button_img_icon far fa-address-card" />
+                      Crear tarjeta
+                    </button>
                   </div>
-                  <div className="completed_content hidden">
-                    <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
-                    <a href="#" className="completed_content_url" target="_self" />
-                    <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
-                  </div>
-                </Collapsibles>
-              </section>
+                </div>
+                <div className="completed_content hidden">
+                  <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
+                  <a href="#" className="completed_content_url" target="_self" />
+                  <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
+                </div>
+              </Collapsibles>
             </section>
           </main>
         </section>
         <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
-      </div>
+      </React.Fragment>
     );
   }
 }
