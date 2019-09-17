@@ -1,7 +1,7 @@
-import React from 'react';
-import SocialLinkCardPreview from './SocialLinkCardPreview.js';
-import '../stylesheets/scss/components/CardPreview.scss';
-import Input from './Inputs';
+import React from "react";
+import SocialLinkCardPreview from "./SocialLinkCardPreview.js";
+import "../stylesheets/scss/components/CardPreview.scss";
+import Input from "./Inputs";
 
 class CardPreview extends React.Component {
   constructor(props) {
@@ -15,10 +15,10 @@ class CardPreview extends React.Component {
 
   render() {
     return (
-      <div className="card js-card">
+      <div className="card js-card ">
         <div className="card_header">
           <h1 className={this.props.fullnameClass} data-placeholder={this.props.fullname}>
-            {this.props.fullname}{' '}
+            {this.props.fullname}{" "}
           </h1>
           <p className={this.props.jobClass} data-placeholder={this.props.jobCard}>
             {this.props.jobCard}
