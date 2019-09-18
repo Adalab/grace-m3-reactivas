@@ -18,7 +18,6 @@ class App extends React.Component {
 App.propTypes = {
   Landing: PropTypes.element,
   Editor: PropTypes.element
-  // Los componentes se ponen??
 };
 
 export default App;

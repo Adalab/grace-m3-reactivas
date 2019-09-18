@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/MainDescription.scss";
 
 const MainDescription = props => {
@@ -11,6 +12,12 @@ const MainDescription = props => {
       </div>
     </div>
   );
+};
+
+MainDescription.propTypes = {
+  foto: PropTypes.string,
+  mainTitle: PropTypes.string,
+  mainText: PropTypes.string
 };
 
 export default MainDescription;

@@ -10,11 +10,7 @@ function Share() {
 
         <button type="submit" className="completed_content_button">
           {" "}
-          <a
-            href=""
-            className="completed_content_button_twitter"
-            target="_blank"
-          >
+          <a href="" className="completed_content_button_twitter" target="_blank">
             <i className="completed_content_button_icon fab fa-twitter"></i>
             Compartir en twitter
           </a>
