@@ -2,6 +2,7 @@ import React from "react";
 import SocialLinkCardPreview from "./SocialLinkCardPreview.js";
 import "../stylesheets/scss/components/CardPreview.scss";
 import Input from "./Inputs";
+import PropTypes from "prop-types";
 
 class CardPreview extends React.Component {
   constructor(props) {
@@ -38,5 +39,16 @@ class CardPreview extends React.Component {
     );
   }
 }
+CardPreview.propTypes = {
+  fullnameClass: PropTypes.string,
+  fullname: PropTypes.string,
+  jobClass: PropTypes.string,
+  jobCard: PropTypes.string,
+  imageCard: PropTypes.string,
+  userPhone: PropTypes.string,
+  userEmail: PropTypes.string,
+  linkedinLink: PropTypes.string,
+  githubLink: PropTypes.string
+};
 
 export default CardPreview;

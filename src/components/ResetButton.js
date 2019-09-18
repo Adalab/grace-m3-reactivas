@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ResetButton.scss";
 
 function ResetButton(props) {
@@ -9,5 +10,11 @@ function ResetButton(props) {
     </button>
   );
 }
+
+ResetButton.propTypes = {
+  action: PropTypes.func,
+  icon: PropTypes.string,
+  name: PropTypes.string
+};
 
 export default ResetButton;

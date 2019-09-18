@@ -1,7 +1,7 @@
-import React from 'react';
-
-import '../stylesheets/scss/components/PalettesContainer.scss';
-import '../stylesheets/scss/components/Palette.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import "../stylesheets/scss/components/PalettesContainer.scss";
+import "../stylesheets/scss/components/Palette.scss";
 
 class Palette extends React.Component {
   constructor(props) {
@@ -31,10 +31,14 @@ class Palette extends React.Component {
     );
   }
 }
-
-{
-  /* <input id="form--age" type="radio" name="age" value="A" onChange={this.handleChange} checked={this.state.age === "A" ? true : false} />
-            </label> */
-}
-
+Palette.propTypes = {
+  updateCheckboxColor: PropTypes.func,
+  color1: PropTypes.string,
+  color2: PropTypes.string,
+  color3: PropTypes.string,
+  value: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  actionToPerform: PropTypes.func,
+  htmlFor: PropTypes.string
+};
 export default Palette;

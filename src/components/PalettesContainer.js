@@ -1,6 +1,7 @@
-import React from 'react';
-import '../stylesheets/scss/components/PalettesContainer.scss';
-import Palette from './Palette';
+import React from "react";
+import PropTypes from "prop-types";
+import "../stylesheets/scss/components/PalettesContainer.scss";
+import Palette from "./Palette";
 
 const PalettesContainer = props => {
   return (
@@ -15,6 +16,10 @@ const PalettesContainer = props => {
       </div>
     </div>
   );
+};
+
+PalettesContainer.propTypes = {
+  updateCheckboxColor: PropTypes.func
 };
 
 export default PalettesContainer;
