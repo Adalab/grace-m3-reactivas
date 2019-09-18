@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/components/ShareButton.scss";
+import "../stylesheets/scss/core/Variables.scss";
 
 function ShareButton(props) {
   return (
