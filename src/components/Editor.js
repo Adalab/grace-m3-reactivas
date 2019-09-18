@@ -104,6 +104,10 @@ class Editor extends React.Component {
     this.setState({ palette: `${paletteSelected}` }, this.saveData);
   }
 
+  componentDidMount() {
+    this.saveData();
+    this.getData();
+  }
   saveData() {
     localStorage.setItem("info", JSON.stringify(this.state));
   }
