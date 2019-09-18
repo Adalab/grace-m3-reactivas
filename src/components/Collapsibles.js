@@ -35,8 +35,8 @@ Collapsibles.propTypes = {
   togglePanel: PropTypes.func,
   open: PropTypes.bool,
   icon: PropTypes.string,
-  title: PropTypes.string
-  // children: PropTypes.element
+  title: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
 export default Collapsibles;
