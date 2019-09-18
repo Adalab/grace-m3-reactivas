@@ -174,7 +174,6 @@ Editor.propTypes = {
   resetData: PropTypes.func,
   forceUpdate: PropTypes.func,
   setState: PropTypes.object,
-  // LocalStorage ??
   clearForm: PropTypes.func,
   updatePreviewName: PropTypes.func,
   updatePreviewJob: PropTypes.func,

@@ -49,7 +49,6 @@ CardPreview.propTypes = {
   userEmail: PropTypes.string,
   linkedinLink: PropTypes.string,
   githubLink: PropTypes.string
-  // Los componentes se ponen??
 };
 
 export default CardPreview;
