@@ -2,8 +2,7 @@ import React from "react";
 import SocialLinkCardPreview from "./SocialLinkCardPreview.js";
 import "../stylesheets/scss/components/CardPreview.scss";
 import Input from "./Inputs";
-import GetAvatar from "./GetAvatar";
-import { url } from "inspector";
+// import { url } from "inspector";
 
 class CardPreview extends React.Component {
   constructor(props) {
@@ -16,7 +15,10 @@ class CardPreview extends React.Component {
   // {this.updatePreviewLinkedin()}
 
   render() {
-    const { profile, isAvatarDefault } = this.state;
+    // const { profile, isAvatarDefault, image } = this.state;
+    const handleClick = this.handleClick;
+    // const action = handleClick;
+
     return (
       <div className="card js-card ">
         <div className="card_header">
@@ -33,7 +35,12 @@ class CardPreview extends React.Component {
             {this.props.jobCard}
           </p>
         </div>
-        <div className={this.props.imageCard} style={{backgroundImage: `url(${image})`} />
+        <div
+          style={this.props.styleimage}
+          className={this.props.styleClass}
+          // style={{ backgroundImage: `url(${image})` }}
+        ></div>
+
         <ul className="card_footer_list">
           <SocialLinkCardPreview
             linkClass="js-phone card_link"

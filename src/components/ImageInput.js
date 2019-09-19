@@ -2,7 +2,38 @@ import React from "react";
 import "../stylesheets/scss/components/ImageInput.scss";
 
 class ImageInput extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.updateUserInfo = this.updateUserInfo.bind(this);
+    this.fr = new FileReader();
+    this.myFileField = React.createRef();
+    this.handleFilePicker = this.handleFilePicker.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+    this.getImage = this.getImage.bind(this);
+  }
+  handleFilePicker() {
+    this.myFileField.current.click();
+  }
+
+  uploadImage(e) {
+    const myFile = e.currentTarget.files[0];
+    this.fr.addEventListener("load", this.getImage);
+    this.fr.readAsDataURL(myFile);
+  }
+
+  getImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
+  getPreview(isDefault, image) {
+    return !isDefault ? { backgroundImage: `url(${image})` } : {};
+  }
+
   render() {
+    const { isAvatarDefault, avatar } = this.props;
+    const actionToPerform = this.getPreview(isAvatarDefault, avatar);
+    const actionClass = "get-avatar__preview probando";
     return (
       <div className="fill-in_item">
         <label className="fill-in_label" htmlFor="img-profile">
@@ -10,6 +41,7 @@ class ImageInput extends React.Component {
         </label>
 
         <div className="fill-in_buttonImg-wrapper">
+          <button onClick={this.handleFilePicker}>Holi</button>
           <input
             className={this.props.classRealButton}
             id="img-profile"

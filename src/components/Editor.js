@@ -115,6 +115,8 @@ class Editor extends React.Component {
   render() {
     const classColor = `card_content palette${this.state.palette}`;
     const { profile, isAvatarDefault } = this.state;
+    const handleClick = this.handleClick;
+
     return (
       <div>
         <Header
@@ -133,11 +135,11 @@ class Editor extends React.Component {
                     name="Reset"
                   />
                   <div className="App">
-                    <GetAvatar
+                    {/* <GetAvatar
                       avatar={profile.avatar}
                       isAvatarDefault={isAvatarDefault}
                       updateAvatar={this.updateAvatar}
-                    />
+                    /> */}
 
                     <Profile avatar={profile.avatar} />
                   </div>
@@ -173,7 +175,13 @@ class Editor extends React.Component {
                   title="Rellena"
                   arrow="fas fas fa-chevron-up legend_arrow"
                 >
-                  <InputContainer updateEventInfo={this.updateEventInfo} />
+                  <InputContainer
+                    updateEventInfo={this.updateEventInfo}
+                    // avatar={profile.avatar}
+                    // HAY QUE CONCRETAR ESTO
+                    // isAvatarDefault={isAvatarDefault}
+                    // updateAvatar={this.updateAvatar}
+                  />
                 </Collapsibles>
               </section>
               <section className="share-section js-collapsible">

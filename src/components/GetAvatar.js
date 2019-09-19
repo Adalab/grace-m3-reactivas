@@ -34,6 +34,8 @@ class GetAvatar extends Component {
 
   render() {
     const { isAvatarDefault, avatar } = this.props;
+    const actionToPerform = this.getPreview(isAvatarDefault, avatar);
+    const actionClass = "get-avatar__preview probando";
     return (
       <div className="get-avatar">
         <button
@@ -52,7 +54,7 @@ class GetAvatar extends Component {
         />
 
         <div
-          className="get-avatar__preview"
+          className="get-avatar__preview probando"
           style={this.getPreview(isAvatarDefault, avatar)}
         ></div>
       </div>
