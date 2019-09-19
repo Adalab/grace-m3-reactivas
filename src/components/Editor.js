@@ -5,7 +5,6 @@ import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import Header from "./Header";
 import InputContainer from "./InputContainer.js";
 import ResetButton from "./ResetButton";
-import ShareButton from "./ShareButton";
 import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
@@ -13,6 +12,8 @@ import CardPreview from "./CardPreview";
 import GetAvatar from "./GetAvatar.js";
 import Profile from "./Profile.js";
 import defaultImage from "./defaultImage.js";
+import { fetchCard } from "./fetchCard.js";
+import Share from "./Share";
 
 class Editor extends React.Component {
   constructor(props) {
@@ -20,9 +21,17 @@ class Editor extends React.Component {
     const localStorageData = this.getData();
     this.state =
       localStorageData === null ? this.getInitialState() : localStorageData;
+    this.state = {
+      isAvatarDefault: true,
+      urlAPI: "",
+      ShareButton: "",
+      urlError: ""
+    };
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.fetchNewCard = this.fetchNewCard.bind(this);
+    this.createTweet = this.createTweet.bind(this);
   }
 
   getInitialState() {
@@ -111,7 +120,44 @@ class Editor extends React.Component {
   getData() {
     return JSON.parse(localStorage.getItem("info"));
   }
+  createTweet(url) {
+    const twitterLinkBtn = document.querySelector(".share__btn--twitter");
+    const twitterLink = "https://twitter.com/intent/tweet";
+    const hashtags = "AdalabDigital,adalabers,Adalab,REACTivas";
+    const text =
+      "Check%20out%20my%20new%20online%20business%20card%20from%20Awesome%20Profile%20Cards!%20";
+    const tweet = `${twitterLink}?text=${text};hashtags=${hashtags}%20${url}`;
+    twitterLinkBtn.href = tweet;
+  }
 
+  fetchNewCard(event) {
+    this.setState({
+      shareButton: "clicked"
+    });
+    const getItem = JSON.parse(localStorage.getItem("info"));
+    event.preventDefault();
+    fetchCard(getItem).then(data => {
+      this.setState({
+        urlAPI: data.cardURL
+      });
+      this.createTweet(data.cardURL);
+      if (data.success === false) {
+        this.setState({
+          urlError: data.error
+        });
+        setTimeout(
+          () =>
+            this.setState({
+              isVisible: "fill",
+              urlError: "",
+              urlAPI: "",
+              shareButton: ""
+            }),
+          2000
+        );
+      }
+    });
+  }
   render() {
     const classColor = `card_content palette${this.state.palette}`;
     const { profile, isAvatarDefault } = this.state;
@@ -133,13 +179,13 @@ class Editor extends React.Component {
                     name="Reset"
                   />
                   <div className="App">
-                    <GetAvatar
-                      avatar={profile.avatar}
+                    {/* <GetAvatar
+                      avatar={this.state.profile.avatar}
                       isAvatarDefault={isAvatarDefault}
                       updateAvatar={this.updateAvatar}
-                    />
-
-                    <Profile avatar={profile.avatar} />
+                    /> */}
+                    {/* 
+                    <Profile avatar={profile.avatar} /> */}
                   </div>
                   <CardPreview
                     fullnameclassName="js-name card_name"
@@ -182,29 +228,7 @@ class Editor extends React.Component {
                   title="Comparte"
                   arrow="fas fas fa-chevron-up legend_arrow"
                 >
-                  <div className="js-collapsible-content">
-                    <div className="share_button">
-                      <button type="submit" className="share_button_img">
-                        {" "}
-                        <i className="share_button_img_icon far fa-address-card" />
-                        Crear tarjeta
-                      </button>
-                    </div>
-                  </div>
-                  <div className="completed_content hidden">
-                    <h3 className="completed_content_title">
-                      La tarjeta ha sido creada:
-                    </h3>
-                    <a
-                      href="#"
-                      className="completed_content_url"
-                      target="_self"
-                    />
-                    <ShareButton
-                      icon="completed_content_button_icon fab fa-twitter"
-                      name="Compartir en twitter"
-                    />
-                  </div>
+                  <Share />
                 </Collapsibles>
               </section>
             </section>
