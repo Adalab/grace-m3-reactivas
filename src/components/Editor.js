@@ -19,6 +19,7 @@ class Editor extends React.Component {
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
     this.clearForm = this.clearForm.bind(this);
+    this.resetData = this.resetData.bind(this);
   }
 
   getInitialState() {
@@ -34,6 +35,7 @@ class Editor extends React.Component {
   }
 
   clearForm() {
+    this.forceUpdate();
     this.setState({
       userFullName: '',
       userJob: '',
@@ -42,6 +44,11 @@ class Editor extends React.Component {
       userLinkedin: '',
       userGithub: '',
     });
+    this.resetData();
+  }
+
+  resetData() {
+    localStorage.clear();
   }
 
   updateEventInfo = event => {
