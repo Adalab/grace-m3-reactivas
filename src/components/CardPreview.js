@@ -1,7 +1,7 @@
 import React from "react";
 import SocialLinkCardPreview from "./SocialLinkCardPreview.js";
 import "../stylesheets/scss/components/CardPreview.scss";
-import Input from "./Inputs";
+// import Input from "./Inputs";
 import PropTypes from "prop-types";
 
 class CardPreview extends React.Component {

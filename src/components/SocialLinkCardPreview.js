@@ -7,7 +7,7 @@ class SocialLinkCardPreview extends React.Component {
     return (
       <li className="card_footer_item">
         {" "}
-        <a className={this.props.linkClass} href="" data-placeholder="" href={this.props.socialLink} target="_blank">
+        <a className={this.props.linkClass} data-placeholder="" href={this.props.socialLink} target="_blank" rel="noopener noreferrer">
           <i className={this.props.iconCard} />
         </a>
       </li>

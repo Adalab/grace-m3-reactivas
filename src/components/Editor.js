@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import logoAdalab from "../images/logo-adalab-80px.png";
 import PropTypes from "prop-types";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
@@ -121,34 +121,34 @@ class Editor extends React.Component {
     return (
       <div>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
-        <section class="editor_container">
-          <main class="editor_main">
-            <section class="editor_card">
-              <main class={classColor}>
-                <div class="container">
+        <section className="editor_container">
+          <main className="editor_main">
+            <section className="editor_card">
+              <main className={classColor}>
+                <div className="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" action={this.clearForm} />
                   <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
-            <section class="editor_form js-form">
-              <section class="design_section js-collapsible">
+            <section className="editor_form js-form">
+              <section className="design_section js-collapsible">
                 <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
                   <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
                 </Collapsibles>
               </section>
-              <section class="fill-in_section js-collapsible">
+              <section className="fill-in_section js-collapsible">
                 <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
                   <InputContainer updateEventInfo={this.updateEventInfo} data={this.state} />
                 </Collapsibles>
               </section>
-              <section class="share-section js-collapsible">
+              <section className="share-section js-collapsible">
                 <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
-                  <div class="js-collapsible-content">
-                    <div class="share_button">
-                      <button type="submit" class="share_button_img">
+                  <div className="js-collapsible-content">
+                    <div className="share_button">
+                      <button type="submit" className="share_button_img">
                         {" "}
-                        <i class="share_button_img_icon far fa-address-card" />
+                        <i className="share_button_img_icon far fa-address-card" />
                         Crear tarjeta
                       </button>
                     </div>
@@ -178,7 +178,6 @@ Editor.propTypes = {
   resetData: PropTypes.func,
   forceUpdate: PropTypes.func,
   setState: PropTypes.object,
-  clearForm: PropTypes.func,
   updatePreviewName: PropTypes.func,
   updatePreviewJob: PropTypes.func,
   updatePreviewEmail: PropTypes.func,
