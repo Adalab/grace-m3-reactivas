@@ -50,6 +50,7 @@ class InputContainer extends React.Component {
           name="userFullName"
           placeholder="Hermione Granger"
           action={actionToPerform}
+          required
         />
 
         <Input
@@ -61,6 +62,7 @@ class InputContainer extends React.Component {
           name="userJob"
           placeholder="Front-end developer"
           action={actionToPerform}
+          required
         />
 
         <div className="get-avatar fill-in_item">
@@ -120,6 +122,7 @@ class InputContainer extends React.Component {
           type="email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
           action={actionToPerform}
+          required
         />
         <Input
           type="text"
@@ -131,6 +134,7 @@ class InputContainer extends React.Component {
           placeholder="hermionegranger"
           type="text"
           action={actionToPerform}
+          required
         />
         <Input
           type="text"
@@ -142,6 +146,7 @@ class InputContainer extends React.Component {
           placeholder="hermione-granger"
           type="text"
           action={actionToPerform}
+          required
         />
       </div >
     );
