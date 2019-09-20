@@ -15,6 +15,8 @@ import Footer from "./Footer";
 import CardPreview from "./CardPreview";
 import Profile from "./Profile.js";
 import defaultImage from "../images/sensejs_nomi.jpg";
+import "../stylesheets/scss/components/Fill-in.scss";
+import "../stylesheets/scss/components/Editor.scss";
 
 class Editor extends React.Component {
   constructor(props) {
@@ -30,7 +32,6 @@ class Editor extends React.Component {
 
   getInitialState() {
     return {
-
       name: "",
       job: "",
       phone: "",
@@ -54,7 +55,7 @@ class Editor extends React.Component {
         isAvatarDefault: false
       };
     });
-    this.saveData()
+    this.saveData();
   }
 
   clearForm() {
@@ -98,7 +99,7 @@ class Editor extends React.Component {
   }
 
   updatePreviewName() {
-    console.log(this.state)
+    console.log(this.state);
     if (this.state.name === "") {
       return "Nombre y Apellidos";
     } else {
@@ -178,10 +179,8 @@ class Editor extends React.Component {
                     avatar={profile.avatar}
                     isAvatarDefault={isAvatarDefault}
                     updateAvatar={this.updateAvatar}
-
                     updateEventInfo={this.updateEventInfo}
                     data={this.state}
-
                     imageCard={this.state.profile.photo}
                     name="Imagen de perfil"
                     valueInput="Añadir imagen"

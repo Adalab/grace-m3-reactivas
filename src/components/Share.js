@@ -1,6 +1,6 @@
 import React from "react";
-import "../stylesheets/scss/components/ShareButton.scss";
-import "../stylesheets/scss/core/Variables.scss";
+// import "../stylesheets/scss/components/Share.scss";
+// import "../stylesheets/scss/main.scss";
 
 function Share() {
   return (
