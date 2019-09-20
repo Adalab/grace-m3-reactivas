@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/SquareFontawesomeIconsChilds.scss";
 
 const SquareFontawesomeIconsChilds = props => {
@@ -10,6 +11,10 @@ const SquareFontawesomeIconsChilds = props => {
       <p className="main_action_item">{props.name}</p>
     </div>
   );
+};
+SquareFontawesomeIconsChilds.propTypes = {
+  iconClassName: PropTypes.string,
+  name: PropTypes.string
 };
 
 export default SquareFontawesomeIconsChilds;

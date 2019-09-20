@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Proyecto 3. Un caso de código heredado
 
-In the project directory, you can run:
+En este proyecto vamos a trabajar con un código heredado, es decir escrito por otra persona y sobre el que tenemos que trabajar. En este caso es el código del proyecto del segundo módulo (el generador de tarjetas interactivas).
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Objetivos
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. Lidiar con código heredado y ser capaces de refactorizarlo
+2. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+3. Aprender a usar React para crear una aplicación web sencilla
+4. Aprender a buscar información en la documentación de librerías externas
+5. Implementar Scrum como marco de referencia para el desarrollo del producto, basándonos siempre en los valores de Agile como puntos clave del trabajo en equipo y la mejora continua
+6. Mejorar la comunicación entre los miembros del equipo
+7. Mejorar las habilidades de comunicación en público al exponer el proyecto en la sesión final
 
-### `npm test`
+### Planificación técnica
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En este proyecto hemos usado 2 repos: 
 
-### `npm run build`
+1) el repo del proyecto que nos han asignado, donde hemos trabajado en una rama para entender y mejorar el código heredado; 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2) un nuevo repo con el proyecto de React, donde hemos analizado, probado el código y entendido su estructura para poder adaptarla a nuestras necesidades y conocimientos. Tambien hemos Solucionado errores detectados en el código e
+implementado mejoras en el código heredado, sin modificar la funcionalidad.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Cómo iniciar el proyecto en React
 
-### `npm run eject`
+- Entraremos dentro de la carpeta donde se encuentra el proyecto de React
+- Ejecutaremos el proyecto con npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

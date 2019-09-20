@@ -1,8 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ImageInput.scss";
 
 class ImageInput extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.updateUserInfo = this.updateUserInfo.bind(this);
+    this.fr = new FileReader();
+    this.myFileField = React.createRef();
+    this.handleFilePicker = this.handleFilePicker.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+    this.getImage = this.getImage.bind(this);
+  }
+  handleFilePicker() {
+    this.myFileField.current.click();
+  }
+
+  uploadImage(e) {
+    const myFile = e.currentTarget.files[0];
+    this.fr.addEventListener("load", this.getImage);
+    this.fr.readAsDataURL(myFile);
+  }
+
+  getImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
+  getPreview(isDefault, image) {
+    return !isDefault ? { backgroundImage: `url(${image})` } : {};
+  }
+
   render() {
+    const { isAvatarDefault, avatar } = this.props;
+    const actionToPerform = this.getPreview(isAvatarDefault, avatar);
+    const actionClass = "get-avatar__preview probando";
     return (
       <div className="fill-in_item">
         <label className="fill-in_label" htmlFor="img-profile">
@@ -10,6 +42,7 @@ class ImageInput extends React.Component {
         </label>
 
         <div className="fill-in_buttonImg-wrapper">
+          <button onClick={this.handleFilePicker}>Holi</button>
           <input
             className={this.props.classRealButton}
             id="img-profile"
@@ -25,13 +58,20 @@ class ImageInput extends React.Component {
           />
           <div
             className={this.props.displayPicture}
-            // style={this.getPreview(isAvatarDefault, avatar)}
+          // style={this.getPreview(isAvatarDefault, avatar)}
           ></div>
         </div>
       </div>
     );
   }
 }
+
+ImageInput.propTypes = {
+  name: PropTypes.string,
+  classRealButton: PropTypes.string,
+  valueInput: PropTypes.string,
+  displayPicture: PropTypes.string
+};
 
 export default ImageInput;
 
