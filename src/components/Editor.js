@@ -151,7 +151,7 @@ class Editor extends React.Component {
     const handleClick = this.handleClick;
 
     return (
-      <div>
+      <React.Fragment>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
         <section className="editor_container">
           <main className="editor_main">
@@ -198,7 +198,7 @@ class Editor extends React.Component {
           </main>
         </section>
         <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
-      </div>
+      </React.Fragment>
     );
   }
 }
