@@ -86,9 +86,10 @@ class Share extends React.Component {
               {this.props.title}
             </button>
           </div>
-          <a href={`${this.state.twitterData}`} className="share_button_link">
+          {/* <a href={`${this.state.twitterData}`} className="share_button_link">
             {this.state.twitterData}
-          </a>
+          </a> */}
+          <ShareButton title="La tarjeta ha sido creada:" icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" twitterData={this.state.twitterData} />
         </div>
       </section>
     );

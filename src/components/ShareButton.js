@@ -6,6 +6,7 @@ import "../stylesheets/scss/components/Share.scss";
 const ShareButton = props => {
   const { twitterData } = props;
   console.log(twitterData);
+
   return (
     <div className="completed_content hidden">
       <h3 className="completed_content_title">{props.title}</h3>
@@ -14,7 +15,7 @@ const ShareButton = props => {
       </a>
       <button type="submit" className="completed_content_button" style={props.style}>
         {" "}
-        <a href={`https://twitter.com/intent/tweet?text=Aqui tienes mi tarjeta:${twitterData}`} className="completed_content_button_twitter" target="_blank" rel="noopener noreferrer">
+        <a href={`https://twitter.com/intent/tweet?text=Aqui tienes mi tarjeta: ${twitterData}`} className="completed_content_button_twitter" target="_blank" rel="noopener noreferrer">
           <i className={props.icon}></i>
           {props.name}
         </a>
