@@ -1,5 +1,6 @@
 import React from "react";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/components/ShareButton.scss";
+import "../stylesheets/scss/core/Variables.scss";
 
 function Share() {
   return (
@@ -10,11 +11,7 @@ function Share() {
 
         <button type="submit" className="completed_content_button">
           {" "}
-          <a
-            href=""
-            className="completed_content_button_twitter"
-            target="_blank"
-          >
+          <a href="" className="completed_content_button_twitter" target="_blank">
             <i className="completed_content_button_icon fab fa-twitter"></i>
             Compartir en twitter
           </a>

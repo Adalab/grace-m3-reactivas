@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ImageInput.scss";
 
 class ImageInput extends React.Component {
@@ -64,6 +65,13 @@ class ImageInput extends React.Component {
     );
   }
 }
+
+ImageInput.propTypes = {
+  name: PropTypes.string,
+  classRealButton: PropTypes.string,
+  valueInput: PropTypes.string,
+  displayPicture: PropTypes.string
+};
 
 export default ImageInput;
 

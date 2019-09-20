@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Input from "./Inputs";
 import ImageInput from "./ImageInput";
 import "../stylesheets/scss/components/ImageInput.scss";
@@ -27,37 +28,39 @@ class InputContainer extends React.Component {
     this.props.updateAvatar(image);
   }
   getPreview(isDefault, image) {
-    console.log(this.state)
-
-    return !isDefault ? { backgroundImage: `url(${image})` } : { backgroundImage: `url(../images/sensejs_nomi.jpg)` };
+    return !isDefault ? { backgroundImage: `url(${image})` } : { backgroundImage: `data:url(../images/sensejs_nomi.jpg)` };
   }
 
   render() {
-    const actionToPerformInfo = this.props.updateEventInfo;
-    const { isAvatarDefault, photo } = this.props;
-    const actionToPerform = this.getPreview(isAvatarDefault, photo);
-    const actionClass = "get-avatar__preview probando";
+    const actionToPerform = this.props.updateEventInfo;
+    const infoUser = this.props.data;
+    const { isAvatarDefault, image } = this.props;
+    const actionToPerformImg = this.getPreview(isAvatarDefault, image);
+    // const actionClass = "get-avatar__preview probando";
+    const imagePreview = { backgroundImage: `url(${this.props.imageCard})` };
 
     return (
       <div>
         <Input
           type="text"
-          id="userFullName"
+          id="name"
           label="Nombre completo"
+          value={infoUser.name}
           classInput="js-name"
           name="userFullName"
           placeholder="Hermione Granger"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
 
         <Input
           type="text"
-          id="userJob"
+          id="job"
           label="Puesto"
+          value={infoUser.job}
           classInput="js-job"
           name="userJob"
           placeholder="Front-end developer"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
 
         <div className="get-avatar fill-in_item">
@@ -85,7 +88,8 @@ class InputContainer extends React.Component {
             />
             <div
               className="img-profile_preview js__profile-preview"
-              style={this.getPreview(isAvatarDefault, photo)}
+              style={imagePreview}
+
             ></div>
           </div>
         </div>
@@ -93,51 +97,67 @@ class InputContainer extends React.Component {
 
         <Input
           type="tel"
-          id="userPhone"
+          id="phone"
           label="Teléfono"
+          value={infoUser.phone}
           classInput="js-phone"
           name="userPhone"
           placeholder="+34 678334765"
           type="tel"
           minLength="9"
           pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
 
         <Input
           type="text"
-          id="userEmail"
+          id="email"
           label="Email"
+          value={infoUser.email}
           classInput="js-email"
           name="userEmail"
           placeholder="hermione-granger@gmail.com"
           type="email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
         <Input
           type="text"
-          id="userLinkedin"
+          id="linkedin"
           label="Linkedin"
+          value={infoUser.linkedin}
           classInput="js-linkedin"
           name="userLinkedin"
           placeholder="hermionegranger"
           type="text"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
         <Input
           type="text"
-          id="userGithub"
+          id="github"
           label="Github"
+          value={infoUser.github}
           classInput="js-github"
           name="userGithub"
           placeholder="hermione-granger"
           type="text"
-          action={actionToPerformInfo}
+          action={actionToPerform}
         />
-      </div>
+      </div >
     );
   }
 }
+
+ImageInput.propTypes = {
+  updateEventInfo: PropTypes.func,
+  data: PropTypes.object,
+  userFullName: PropTypes.string,
+  userJob: PropTypes.string,
+  userPhone: PropTypes.string,
+  userEmail: PropTypes.string,
+  userLinkedin: PropTypes.string,
+  userGithub: PropTypes.string,
+  actionToPerform: PropTypes.func
+};
 
 export default InputContainer;

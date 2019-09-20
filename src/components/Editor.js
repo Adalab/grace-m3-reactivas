@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import logoAdalab from "../images/logo-adalab-80px.png";
+import PropTypes from "prop-types";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import Header from "./Header";
 import InputContainer from "./InputContainer.js";
@@ -21,6 +22,8 @@ class Editor extends React.Component {
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.clearForm = this.clearForm.bind(this);
+    this.resetData = this.resetData.bind(this);
   }
 
   getInitialState() {
@@ -52,8 +55,30 @@ class Editor extends React.Component {
     this.saveData()
   }
 
+  clearForm() {
+    this.forceUpdate();
+    this.setState({
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      palette: "1",
+      isAvatarDefault: true,
+      profile: {
+        photo: defaultImage
+      }
+    });
+    this.resetData();
+  }
+
+  resetData() {
+    localStorage.clear();
+  }
+
   updateEventInfo = event => {
-    let key = event.currentTarget.name;
+    let key = event.currentTarget.id;
     let userInfo = event.target.value;
     this.setState(
       {
@@ -71,6 +96,7 @@ class Editor extends React.Component {
   }
 
   updatePreviewName() {
+    console.log(this.state)
     if (this.state.name === "") {
       return "Nombre y Apellidos";
     } else {
@@ -104,6 +130,10 @@ class Editor extends React.Component {
     this.setState({ palette: `${paletteSelected}` }, this.saveData);
   }
 
+  componentDidMount() {
+    this.saveData();
+    this.getData();
+  }
   saveData() {
     localStorage.setItem("info", JSON.stringify(this.state));
   }
@@ -125,14 +155,8 @@ class Editor extends React.Component {
             <section className="editor_card">
               <main className={classColor}>
                 <div className="container">
-                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
+                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" action={this.clearForm} />
                   <div className="App">
-                    {/* <GetAvatar
-                      avatar={profile.avatar}
-                      isAvatarDefault={isAvatarDefault}
-                      updateAvatar={this.updateAvatar}
-                    /> */}
-
                     <Profile avatar={profile.photo} />
                   </div>
                   <CardPreview fullnameclassName="js-name card_name" fullname={this.updatePreviewName()} jobclassName="js-job card_job" jobCard={this.updatePreviewJob()} imageCard={this.state.profile.photo} phone={this.state.phone} email={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
@@ -153,6 +177,10 @@ class Editor extends React.Component {
                     isAvatarDefault={isAvatarDefault}
                     updateAvatar={this.updateAvatar}
 
+                    updateEventInfo={this.updateEventInfo}
+                    data={this.state}
+
+                    imageCard={this.state.profile.photo}
                     name="Imagen de perfil"
                     valueInput="Añadir imagen"
                     classRealButton="fill-in_button js__profile-trigger"
@@ -190,5 +218,22 @@ class Editor extends React.Component {
     );
   }
 }
+
+Editor.propTypes = {
+  getData: PropTypes.func,
+  state: PropTypes.object,
+  updateCheckboxColor: PropTypes.func,
+  saveData: PropTypes.func,
+  clearForm: PropTypes.func,
+  resetData: PropTypes.func,
+  forceUpdate: PropTypes.func,
+  setState: PropTypes.object,
+  updatePreviewName: PropTypes.func,
+  updatePreviewJob: PropTypes.func,
+  updatePreviewEmail: PropTypes.func,
+  updatePreviewLinkedin: PropTypes.func,
+  updatePreviewGithub: PropTypes.func,
+  updateEventInfo: PropTypes.func
+};
 
 export default Editor;
