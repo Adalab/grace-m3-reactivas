@@ -11,11 +11,12 @@ function ShareButton(props) {
   return (
     <div>
       <Loader
+        className="loader"
         type="RevolvingDot"
         color="#a2deaf"
         height={100}
         width={100}
-        timeout={3000} //3 secs
+        timeout={30000} //3 secs
       />
       <button type="submit" className="completed_content_button">
         {" "}
