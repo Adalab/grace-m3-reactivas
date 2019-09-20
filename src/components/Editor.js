@@ -11,6 +11,9 @@ import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
 import CardPreview from "./CardPreview";
+import "../stylesheets/scss/components/Fill-in.scss";
+import "../stylesheets/scss/components/Editor.scss";
+
 
 class Editor extends React.Component {
   constructor(props) {
