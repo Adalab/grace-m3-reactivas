@@ -25,14 +25,24 @@ class Share extends React.Component {
   createCard(ev) {
     ev.preventDefault();
     this.handleHiddenClass();
-    this.sendRequest(this.props.localStorageData);
+    this.sendRequest();
   }
 
-  sendRequest(localStorageData) {
+  sendRequest() {
+    const data = {
+      name: this.props.state.name,
+      job: this.props.state.job,
+      phone: this.props.state.phone,
+      email: this.props.state.email,
+      linkedin: this.props.state.linkedin,
+      github: this.props.state.github,
+      palette: this.props.state.palette,
+      photo: this.props.state.profile.photo
+    };
     fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(localStorageData)
+      body: JSON.stringify(data)
     })
       .then(response => response.json())
       .then(data => {
@@ -53,6 +63,9 @@ class Share extends React.Component {
               {this.props.title}
             </button>
           </div>
+          <a href={`${this.state.twitterData}`} className="share_button_link">
+            {this.state.twitterData}
+          </a>
         </div>
       </section>
     );

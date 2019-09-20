@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../stylesheets/scss/components/ShareButton.scss";
-import "../stylesheets/scss/core/Variables.scss";
+import "../stylesheets/scss/components/Share.scss";
 
 // TwitterData is undefined
 const ShareButton = props => {
