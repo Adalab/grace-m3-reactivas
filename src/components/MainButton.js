@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../stylesheets/scss/main.scss";
+import "../stylesheets/scss/pages/Landing.scss";
+import "../stylesheets/scss/components/Share.scss";
+
 
 function MainButton() {
   return (
