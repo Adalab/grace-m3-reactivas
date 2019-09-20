@@ -192,7 +192,6 @@ class Editor extends React.Component {
               <section className="share-section js-collapsible">
                 <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
                   <Share title="Crear tarjeta" state={this.state} />
-                  <ShareButton title="La tarjeta ha sido creada:" icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
                 </Collapsibles>
               </section>
             </section>
