@@ -1,6 +1,11 @@
 @import '../core/Variables';
 @import '../core/Reset';
 
+// .probando {
+//   height: 300px;
+//   background-size: cover;
+// }
+
 .card_content {
   display: flex;
   flex-direction: column;
@@ -9,34 +14,40 @@
   background-image: url(../../../images/city_mobile_background.png);
   background-size: cover;
   background-position: right;
+
   @media all and (min-width: $width-tablet) {
     background-image: url(../../../images/city_tablet_background.png);
     border-radius: 6px;
     height: 826px;
     margin: 20px;
   }
+
   @media all and (min-width: $width-desktop) {
     background-image: url(../../../images/city_background.png);
   }
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
   margin: 38px 45px 40px 35px;
+
   @media all and (min-width: $width-tablet) {
     margin: auto;
     position: relative;
     top: 173px;
   }
 }
+
 .card {
   display: flex;
   flex-direction: column;
   width: 240px;
   background-color: $color-white;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, -20), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+
   &_button-reset {
     align-self: initial;
     height: 30px;
@@ -51,19 +62,23 @@
     margin-bottom: 20px;
     outline: none;
     transition-duration: 0.2s;
+
     &:hover {
       color: $color-white;
       background-color: $color-light-grey-2;
     }
+
     .trash_icon {
       margin-right: 8px;
     }
   }
+
   &_header {
     font-family: Montserrat;
     margin-top: 21px;
     margin-bottom: 10px;
   }
+
   &_name {
     font-size: 18px;
     font-weight: bold;
@@ -72,6 +87,7 @@
     word-break: break-all;
     margin-left: 20px;
   }
+
   &_job {
     color: $color-dark-gray;
     font-size: 16px;
@@ -80,6 +96,7 @@
     word-break: break-all;
     margin-left: 20px;
   }
+
   &_img {
     height: 200px;
     width: 100%;
@@ -89,19 +106,24 @@
   }
   
 }
+
 .palette1 {
   .card_header {
     border-left: 5px solid $color-2-palette1;
   }
+
   .card_name {
     color: $color-1-palette1;
   }
+
   .card_footer_item {
     border: solid 2px $color-3-palette1;
   }
+
   .card_link {
     color: $color-link-deactivated;
   }
+
   .card_link[href]:not([href='']) {
     color: $color-1-palette1;
   }
@@ -111,32 +133,41 @@
   .card_header {
     border-left: 5px solid $color-2-palette2;
   }
+
   .card_name {
     color: $color-1-palette2;
   }
+
   .card_footer_item {
     border: solid 2px $color-3-palette2;
   }
+
   .card_link {
     color: $color-link-deactivated;
   }
+
   .card_link[href]:not([href='']) {
     color: $color-1-palette2;
   }
 }
+
 .palette3 {
   .card_header {
     border-left: 5px solid $color-2-palette3;
   }
+
   .card_name {
     color: $color-1-palette3;
   }
+
   .card_footer_item {
     border: solid 2px $color-3-palette3;
   }
+
   .card_link {
     color: $color-link-deactivated;
   }
+
   .card_link[href]:not([href='']) {
     color: $color-1-palette3;
   }

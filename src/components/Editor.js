@@ -1,5 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
+//probando
+// probando
 import logoAdalab from "../images/logo-adalab-80px.png";
 import PropTypes from "prop-types";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
@@ -11,9 +13,10 @@ import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
 import CardPreview from "./CardPreview";
+import Profile from "./Profile.js";
+import defaultImage from "../images/sensejs_nomi.jpg";
 import "../stylesheets/scss/components/Fill-in.scss";
 import "../stylesheets/scss/components/Editor.scss";
-
 
 class Editor extends React.Component {
   constructor(props) {
@@ -22,31 +25,53 @@ class Editor extends React.Component {
     this.state = localStorageData === null ? this.getInitialState() : localStorageData;
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
     this.clearForm = this.clearForm.bind(this);
     this.resetData = this.resetData.bind(this);
   }
 
   getInitialState() {
     return {
-      userFullName: "",
-      userJob: "",
-      userPhone: "",
-      userEmail: "",
-      userLinkedin: "",
-      userGithub: "",
-      palette: "1"
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      palette: "1",
+      isAvatarDefault: true,
+      profile: {
+        photo: defaultImage
+      }
     };
+  }
+
+  updateAvatar(img) {
+    const { profile } = this.state;
+    this.setState(prevState => {
+      const newProfile = { ...profile, photo: img };
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      };
+    });
+    this.saveData();
   }
 
   clearForm() {
     this.forceUpdate();
     this.setState({
-      userFullName: "",
-      userJob: "",
-      userPhone: "",
-      userEmail: "",
-      userLinkedin: "",
-      userGithub: ""
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      palette: "1",
+      isAvatarDefault: true,
+      profile: {
+        photo: defaultImage
+      }
     });
     this.resetData();
   }
@@ -66,39 +91,40 @@ class Editor extends React.Component {
     );
   };
   updatePreviewEmail() {
-    if (this.state.userEmail === "") {
+    if (this.state.email === "") {
       return "";
     } else {
-      return `mailto:${this.state.userEmail}`;
+      return `mailto:${this.state.email}`;
     }
   }
 
   updatePreviewName() {
-    if (this.state.userFullName === "") {
+    console.log(this.state);
+    if (this.state.name === "") {
       return "Nombre y Apellidos";
     } else {
-      return `${this.state.userFullName}`;
+      return `${this.state.name}`;
     }
   }
   updatePreviewJob() {
-    if (this.state.userJob === "") {
+    if (this.state.job === "") {
       return "Front end developer";
     } else {
-      return `${this.state.userJob}`;
+      return `${this.state.job}`;
     }
   }
   updatePreviewLinkedin() {
-    if (this.state.userLinkedin === "") {
+    if (this.state.linkedin === "") {
       return "";
     } else {
-      return `https://www.linkedin.com/in/${this.state.userLinkedin}`;
+      return `https://www.linkedin.com/in/${this.state.linkedin}`;
     }
   }
   updatePreviewGithub() {
-    if (this.state.userGithub === "") {
+    if (this.state.github === "") {
       return "";
     } else {
-      return `https://www.github.com/${this.state.userGithub}`;
+      return `https://www.github.com/${this.state.github}`;
     }
   }
 
@@ -121,6 +147,9 @@ class Editor extends React.Component {
 
   render() {
     const classColor = `card_content palette${this.state.palette}`;
+    const { profile, isAvatarDefault } = this.state;
+    const handleClick = this.handleClick;
+
     return (
       <div>
         <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
@@ -130,7 +159,10 @@ class Editor extends React.Component {
               <main className={classColor}>
                 <div className="container">
                   <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" action={this.clearForm} />
-                  <CardPreview fullnameClass="js-name card_name" fullname={this.updatePreviewName()} jobClass="js-job card_job" jobCard={this.updatePreviewJob()} imageCard="card_img js__profile-image" userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
+                  <div className="App">
+                    <Profile avatar={profile.photo} />
+                  </div>
+                  <CardPreview fullnameclassName="js-name card_name" fullname={this.updatePreviewName()} jobclassName="js-job card_job" jobCard={this.updatePreviewJob()} imageCard={this.state.profile.photo} phone={this.state.phone} email={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
@@ -142,7 +174,19 @@ class Editor extends React.Component {
               </section>
               <section className="fill-in_section js-collapsible">
                 <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
-                  <InputContainer updateEventInfo={this.updateEventInfo} data={this.state} />
+                  <InputContainer
+                    // HAY QUE CONCRETAR ESTO
+                    avatar={profile.avatar}
+                    isAvatarDefault={isAvatarDefault}
+                    updateAvatar={this.updateAvatar}
+                    updateEventInfo={this.updateEventInfo}
+                    data={this.state}
+                    imageCard={this.state.profile.photo}
+                    name="Imagen de perfil"
+                    valueInput="Añadir imagen"
+                    classRealButton="fill-in_button js__profile-trigger"
+                    displayPicture="img-profile_preview js__profile-preview"
+                  />
                 </Collapsibles>
               </section>
               <section className="share-section js-collapsible">
@@ -158,7 +202,11 @@ class Editor extends React.Component {
                   </div>
                   <div className="completed_content hidden">
                     <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
-                    <a href="#" className="completed_content_url" target="_self" />
+                    {/* <a
+                      href="#"
+                      className="completed_content_url"
+                      target="_self"
+                    /> */}
                     <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
                   </div>
                 </Collapsibles>
