@@ -14,6 +14,25 @@ class Share extends React.Component {
     this.createCard = this.createCard.bind(this);
     this.handleHiddenClass = this.handleHiddenClass.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
+    this.changeButtonColor = this.changeButtonColor.bind(this);
+
+  }
+
+  isValidData() {
+    const data = this.props.state;
+    return data.email && data.github && data.job && data.email && data.linkedin && data.name !== ""
+  }
+
+  changeButtonColor() {
+    if (this.isValidData()) {
+      const clase = "share_button_img ableButton";
+      return clase
+
+    } else {
+      const clase = "share_button_img disableButton";
+      return clase
+
+    }
   }
 
   handleHiddenClass() {
@@ -24,8 +43,10 @@ class Share extends React.Component {
 
   createCard(ev) {
     ev.preventDefault();
-    this.handleHiddenClass();
-    this.sendRequest();
+    if (this.isValidData()) {
+      this.handleHiddenClass();
+      this.sendRequest();
+    }
   }
 
   sendRequest() {
@@ -53,11 +74,13 @@ class Share extends React.Component {
   }
 
   render() {
+    console.log(this.props.state)
+
     return (
       <section>
         <div className="js-collapsible-content">
           <div className="share_button">
-            <button type="submit" className="share_button_img" onClick={this.createCard}>
+            <button type="submit" className={this.changeButtonColor()} onClick={this.createCard} disabled={!this.isValidData()}>
               {" "}
               <i className="share_button_img_icon far fa-address-card" />
               {this.props.title}

@@ -1,12 +1,16 @@
 @import "../core/Variables";
-
+.disableButton{
+  background-color: grey;
+}
+.ableButton{
+  background-color: $color-dull-orange;
+}
 .share_button {
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   &_img {
-    background-color: $color-dull-orange;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     font-weight: 600;

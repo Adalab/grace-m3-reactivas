@@ -12,7 +12,7 @@ const ShareButton = props => {
       <a href={`${twitterData}`} className="completed_content_url" target="_self" rel="noopener noreferrer">
         {twitterData}
       </a>
-      <button type="submit" className="completed_content_button">
+      <button type="submit" className="completed_content_button" style={props.style}>
         {" "}
         <a href={`https://twitter.com/intent/tweet?text=Aqui tienes mi tarjeta:${twitterData}`} className="completed_content_button_twitter" target="_blank" rel="noopener noreferrer">
           <i className={props.icon}></i>
