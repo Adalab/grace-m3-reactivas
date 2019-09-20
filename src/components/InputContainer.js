@@ -34,8 +34,8 @@ class InputContainer extends React.Component {
 
   render() {
     const actionToPerformInfo = this.props.updateEventInfo;
-    const { isAvatarDefault, avatar } = this.props;
-    const actionToPerform = this.getPreview(isAvatarDefault, avatar);
+    const { isAvatarDefault, photo } = this.props;
+    const actionToPerform = this.getPreview(isAvatarDefault, photo);
     const actionClass = "get-avatar__preview probando";
 
     return (
@@ -85,7 +85,7 @@ class InputContainer extends React.Component {
             />
             <div
               className="img-profile_preview js__profile-preview"
-              style={this.getPreview(isAvatarDefault, avatar)}
+              style={this.getPreview(isAvatarDefault, photo)}
             ></div>
           </div>
         </div>

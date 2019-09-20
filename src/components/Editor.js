@@ -25,16 +25,17 @@ class Editor extends React.Component {
 
   getInitialState() {
     return {
-      userFullName: "",
-      userJob: "",
-      userPhone: "",
-      userEmail: "",
-      userLinkedin: "",
-      userGithub: "",
+
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
       palette: "1",
       isAvatarDefault: true,
       profile: {
-        avatar: defaultImage
+        photo: defaultImage
       }
     };
   }
@@ -42,7 +43,7 @@ class Editor extends React.Component {
   updateAvatar(img) {
     const { profile } = this.state;
     this.setState(prevState => {
-      const newProfile = { ...profile, avatar: img };
+      const newProfile = { ...profile, photo: img };
       return {
         profile: newProfile,
         isAvatarDefault: false
@@ -62,39 +63,39 @@ class Editor extends React.Component {
     );
   };
   updatePreviewEmail() {
-    if (this.state.userEmail === "") {
+    if (this.state.email === "") {
       return "";
     } else {
-      return `mailto:${this.state.userEmail}`;
+      return `mailto:${this.state.email}`;
     }
   }
 
   updatePreviewName() {
-    if (this.state.userFullName === "") {
+    if (this.state.name === "") {
       return "Nombre y Apellidos";
     } else {
-      return `${this.state.userFullName}`;
+      return `${this.state.name}`;
     }
   }
   updatePreviewJob() {
-    if (this.state.userJob === "") {
+    if (this.state.job === "") {
       return "Front end developer";
     } else {
-      return `${this.state.userJob}`;
+      return `${this.state.job}`;
     }
   }
   updatePreviewLinkedin() {
-    if (this.state.userLinkedin === "") {
+    if (this.state.linkedin === "") {
       return "";
     } else {
-      return `https://www.linkedin.com/in/${this.state.userLinkedin}`;
+      return `https://www.linkedin.com/in/${this.state.linkedin}`;
     }
   }
   updatePreviewGithub() {
-    if (this.state.userGithub === "") {
+    if (this.state.github === "") {
       return "";
     } else {
-      return `https://www.github.com/${this.state.userGithub}`;
+      return `https://www.github.com/${this.state.github}`;
     }
   }
 
@@ -132,9 +133,9 @@ class Editor extends React.Component {
                       updateAvatar={this.updateAvatar}
                     /> */}
 
-                    <Profile avatar={profile.avatar} />
+                    <Profile avatar={profile.photo} />
                   </div>
-                  <CardPreview fullnameclassName="js-name card_name" fullname={this.updatePreviewName()} jobclassName="js-job card_job" jobCard={this.updatePreviewJob()} imageCard={this.state.profile.avatar} userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
+                  <CardPreview fullnameclassName="js-name card_name" fullname={this.updatePreviewName()} jobclassName="js-job card_job" jobCard={this.updatePreviewJob()} imageCard={this.state.profile.photo} phone={this.state.phone} email={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
