@@ -10,16 +10,14 @@ import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
 import CardPreview from "./CardPreview";
-import GetAvatar from "./GetAvatar.js";
 import Profile from "./Profile.js";
-import defaultImage from "./defaultImage.js";
+import defaultImage from "../images/sensejs_nomi.jpg";
 
 class Editor extends React.Component {
   constructor(props) {
     super(props);
     const localStorageData = this.getData();
-    this.state =
-      localStorageData === null ? this.getInitialState() : localStorageData;
+    this.state = localStorageData === null ? this.getInitialState() : localStorageData;
     this.updateCheckboxColor = this.updateCheckboxColor.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
@@ -50,6 +48,7 @@ class Editor extends React.Component {
         isAvatarDefault: false
       };
     });
+    this.saveData()
   }
 
   updateEventInfo = event => {
@@ -119,21 +118,13 @@ class Editor extends React.Component {
 
     return (
       <div>
-        <Header
-          url="/"
-          foto={awesomeProfilePic}
-          destiny="_self"
-          alt="Awesome Profile Cards"
-        />
+        <Header url="/" foto={awesomeProfilePic} destiny="_self" alt="Awesome Profile Cards" />
         <section className="editor_container">
           <main className="editor_main">
             <section className="editor_card">
               <main className={classColor}>
                 <div className="container">
-                  <ResetButton
-                    icon="far fa-trash-alt trash_icon"
-                    name="Reset"
-                  />
+                  <ResetButton icon="far fa-trash-alt trash_icon" name="Reset" />
                   <div className="App">
                     {/* <GetAvatar
                       avatar={profile.avatar}
@@ -143,53 +134,33 @@ class Editor extends React.Component {
 
                     <Profile avatar={profile.avatar} />
                   </div>
-                  <CardPreview
-                    fullnameclassName="js-name card_name"
-                    fullname={this.updatePreviewName()}
-                    jobclassName="js-job card_job"
-                    jobCard={this.updatePreviewJob()}
-                    imageCard="card_img js__profile-image"
-                    userPhone={this.state.userPhone}
-                    userEmail={this.updatePreviewEmail()}
-                    linkedinLink={this.updatePreviewLinkedin()}
-                    githubLink={this.updatePreviewGithub()}
-                  />
+                  <CardPreview fullnameclassName="js-name card_name" fullname={this.updatePreviewName()} jobclassName="js-job card_job" jobCard={this.updatePreviewJob()} imageCard={this.state.profile.avatar} userPhone={this.state.userPhone} userEmail={this.updatePreviewEmail()} linkedinLink={this.updatePreviewLinkedin()} githubLink={this.updatePreviewGithub()} />
                 </div>
               </main>
             </section>
             <section className="editor_form js-form">
               <section className="design_section js-collapsible">
-                <Collapsibles
-                  icon="legend_icon far fa-object-ungroup"
-                  title="Diseña"
-                  arrow="fas fas fa-chevron-up legend_arrow"
-                >
-                  <PalettesContainer
-                    updateCheckboxColor={this.updateCheckboxColor}
-                  ></PalettesContainer>
+                <Collapsibles icon="legend_icon far fa-object-ungroup" title="Diseña" arrow="fas fas fa-chevron-up legend_arrow">
+                  <PalettesContainer updateCheckboxColor={this.updateCheckboxColor}></PalettesContainer>
                 </Collapsibles>
               </section>
               <section className="fill-in_section js-collapsible">
-                <Collapsibles
-                  icon="far fa-keyboard legend_icon"
-                  title="Rellena"
-                  arrow="fas fas fa-chevron-up legend_arrow"
-                >
+                <Collapsibles icon="far fa-keyboard legend_icon" title="Rellena" arrow="fas fas fa-chevron-up legend_arrow">
                   <InputContainer
-                    updateEventInfo={this.updateEventInfo}
-                    // avatar={profile.avatar}
                     // HAY QUE CONCRETAR ESTO
-                    // isAvatarDefault={isAvatarDefault}
-                    // updateAvatar={this.updateAvatar}
+                    avatar={profile.avatar}
+                    isAvatarDefault={isAvatarDefault}
+                    updateAvatar={this.updateAvatar}
+
+                    name="Imagen de perfil"
+                    valueInput="Añadir imagen"
+                    classRealButton="fill-in_button js__profile-trigger"
+                    displayPicture="img-profile_preview js__profile-preview"
                   />
                 </Collapsibles>
               </section>
               <section className="share-section js-collapsible">
-                <Collapsibles
-                  icon="legend_icon fas fa-share-alt"
-                  title="Comparte"
-                  arrow="fas fas fa-chevron-up legend_arrow"
-                >
+                <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
                   <div className="js-collapsible-content">
                     <div className="share_button">
                       <button type="submit" className="share_button_img">
@@ -200,29 +171,20 @@ class Editor extends React.Component {
                     </div>
                   </div>
                   <div className="completed_content hidden">
-                    <h3 className="completed_content_title">
-                      La tarjeta ha sido creada:
-                    </h3>
-                    <a
+                    <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
+                    {/* <a
                       href="#"
                       className="completed_content_url"
                       target="_self"
-                    />
-                    <ShareButton
-                      icon="completed_content_button_icon fab fa-twitter"
-                      name="Compartir en twitter"
-                    />
+                    /> */}
+                    <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
                   </div>
                 </Collapsibles>
               </section>
             </section>
           </main>
         </section>
-        <Footer
-          url="https://www.adalab.es"
-          foto={logoAdalab}
-          title="Awesome profile-cards @ Sense.JS 2019"
-        />
+        <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
       </div>
     );
   }

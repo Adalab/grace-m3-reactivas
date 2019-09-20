@@ -57,7 +57,7 @@ class ImageInput extends React.Component {
           />
           <div
             className={this.props.displayPicture}
-            // style={this.getPreview(isAvatarDefault, avatar)}
+          // style={this.getPreview(isAvatarDefault, avatar)}
           ></div>
         </div>
       </div>

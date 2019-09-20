@@ -8,16 +8,9 @@ class CardPreview extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  // userEmail: '',
-  //     userLinkedin: '',
-  //     userGithub: '',
-  // {this.updatePreviewLinkedin()}
-
   render() {
-    // const { profile, isAvatarDefault, image } = this.state;
     const handleClick = this.handleClick;
-    // const action = handleClick;
+    const image = { backgroundImage: `url(${this.props.imageCard})` };
 
     return (
       <div className="card js-card ">
@@ -36,9 +29,8 @@ class CardPreview extends React.Component {
           </p>
         </div>
         <div
-          style={this.props.styleimage}
-          className={this.props.styleClass}
-          // style={{ backgroundImage: `url(${image})` }}
+          style={image}
+          className="card_img"
         ></div>
 
         <ul className="card_footer_list">
