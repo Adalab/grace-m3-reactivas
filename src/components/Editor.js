@@ -13,6 +13,7 @@ import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
 import CardPreview from "./CardPreview";
+import Share from "./Share";
 import Profile from "./Profile.js";
 import defaultImage from "../images/sensejs_nomi.jpg";
 import "../stylesheets/scss/components/Fill-in.scss";
@@ -99,7 +100,6 @@ class Editor extends React.Component {
   }
 
   updatePreviewName() {
-    console.log(this.state);
     if (this.state.name === "") {
       return "Nombre y Apellidos";
     } else {
@@ -191,24 +191,7 @@ class Editor extends React.Component {
               </section>
               <section className="share-section js-collapsible">
                 <Collapsibles icon="legend_icon fas fa-share-alt" title="Comparte" arrow="fas fas fa-chevron-up legend_arrow">
-                  <div className="js-collapsible-content">
-                    <div className="share_button">
-                      <button type="submit" className="share_button_img">
-                        {" "}
-                        <i className="share_button_img_icon far fa-address-card" />
-                        Crear tarjeta
-                      </button>
-                    </div>
-                  </div>
-                  <div className="completed_content hidden">
-                    <h3 className="completed_content_title">La tarjeta ha sido creada:</h3>
-                    {/* <a
-                      href="#"
-                      className="completed_content_url"
-                      target="_self"
-                    /> */}
-                    <ShareButton icon="completed_content_button_icon fab fa-twitter" name="Compartir en twitter" />
-                  </div>
+                  <Share title="Crear tarjeta" state={this.state} />
                 </Collapsibles>
               </section>
             </section>
