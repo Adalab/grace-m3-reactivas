@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ImageInput.scss";
 
 class ImageInput extends React.Component {
@@ -10,19 +11,8 @@ class ImageInput extends React.Component {
         </label>
 
         <div className="fill-in_buttonImg-wrapper">
-          <input
-            className={this.props.classRealButton}
-            id="img-profile"
-            type="button"
-            value={this.props.valueInput}
-            name="img-profile"
-          />
-          <input
-            name="photo"
-            type="file"
-            id="img-selector"
-            className="action_hiddenField js__profile-upload-btn"
-          />
+          <input className={this.props.classRealButton} id="img-profile" type="button" value={this.props.valueInput} name="img-profile" />
+          <input name="photo" type="file" id="img-selector" className="action_hiddenField js__profile-upload-btn" />
           <div
             className={this.props.displayPicture}
             // style={this.getPreview(isAvatarDefault, avatar)}
@@ -32,6 +22,13 @@ class ImageInput extends React.Component {
     );
   }
 }
+
+ImageInput.propTypes = {
+  name: PropTypes.string,
+  classRealButton: PropTypes.string,
+  valueInput: PropTypes.string,
+  displayPicture: PropTypes.string
+};
 
 export default ImageInput;
 
