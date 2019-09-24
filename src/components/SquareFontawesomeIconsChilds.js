@@ -13,8 +13,8 @@ const SquareFontawesomeIconsChilds = props => {
   );
 };
 SquareFontawesomeIconsChilds.propTypes = {
-  iconClassName: PropTypes.string,
-  name: PropTypes.string
+  iconClassName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default SquareFontawesomeIconsChilds;

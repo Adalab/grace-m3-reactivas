@@ -14,9 +14,9 @@ const Footer = props => {
 };
 
 Footer.propTypes = {
-  title: PropTypes.string,
-  url: PropTypes.string,
-  foto: PropTypes.string
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  foto: PropTypes.string.isRequired
 };
 
 export default Footer;

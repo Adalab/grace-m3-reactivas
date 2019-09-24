@@ -4,10 +4,6 @@ import "../stylesheets/scss/components/PalettesContainer.scss";
 import "../stylesheets/scss/components/Palette.scss";
 
 class Palette extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const personalizeColor1 = `design_palette item ${this.props.color1}`;
     const personalizeColor2 = `design_palette item ${this.props.color2}`;
@@ -25,14 +21,14 @@ class Palette extends React.Component {
 }
 
 Palette.propTypes = {
-  updateCheckboxColor: PropTypes.func,
-  color1: PropTypes.string,
-  color2: PropTypes.string,
-  color3: PropTypes.string,
-  value: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  actionToPerform: PropTypes.func,
-  htmlFor: PropTypes.string
+  updateCheckboxColor: PropTypes.func.isRequired,
+  color1: PropTypes.string.isRequired,
+  color2: PropTypes.string.isRequired,
+  color3: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired.isRequired,
+  actionToPerform: PropTypes.func.isRequired,
+  htmlFor: PropTypes.string.isRequired
 };
 
 export default Palette;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../stylesheets/scss/pages/Landing.scss";
 import "../stylesheets/scss/components/Share.scss";
 
-
 function MainButton() {
   return (
     <button className="main_button">
@@ -13,7 +12,5 @@ function MainButton() {
     </button>
   );
 }
-
-// Añadir props en link y en el contenido (Comenzar")
 
 export default MainButton;

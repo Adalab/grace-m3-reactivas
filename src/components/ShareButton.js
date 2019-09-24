@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../stylesheets/scss/components/Share.scss";
 
-// TwitterData is undefined
 const ShareButton = props => {
   const { twitterData } = props;
   console.log(twitterData);
@@ -25,8 +24,8 @@ const ShareButton = props => {
 };
 
 ShareButton.propTypes = {
-  icon: PropTypes.string,
-  name: PropTypes.string
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default ShareButton;

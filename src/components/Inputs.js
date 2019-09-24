@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -16,15 +15,15 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  classInput: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  minLength: PropTypes.string,
-  pattern: PropTypes.string,
-  action: PropTypes.func,
+  id: PropTypes.string.isRequired.isRequired,
+  label: PropTypes.string.isRequired,
+  classInput: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  minLength: PropTypes.string.isRequired,
+  pattern: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired
 };
 

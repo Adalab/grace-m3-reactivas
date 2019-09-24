@@ -20,9 +20,7 @@ const PalettesContainer = props => {
 };
 
 PalettesContainer.propTypes = {
-  updateCheckboxColor: PropTypes.func
+  updateCheckboxColor: PropTypes.func.isRequired
 };
 
 export default PalettesContainer;
-
-// Falta introducir props en el título (Colores)

@@ -12,9 +12,9 @@ function ResetButton(props) {
 }
 
 ResetButton.propTypes = {
-  action: PropTypes.func,
-  icon: PropTypes.string,
-  name: PropTypes.string
+  action: PropTypes.func.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default ResetButton;

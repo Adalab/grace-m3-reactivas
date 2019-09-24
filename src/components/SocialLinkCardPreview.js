@@ -16,9 +16,9 @@ class SocialLinkCardPreview extends React.Component {
 }
 
 SocialLinkCardPreview.propTypes = {
-  linkClass: PropTypes.string,
-  socialLink: PropTypes.string,
-  iconCard: PropTypes.string
+  linkClass: PropTypes.string.isRequired,
+  socialLink: PropTypes.string.isRequired,
+  iconCard: PropTypes.string.isRequired
 };
 
 export default SocialLinkCardPreview;

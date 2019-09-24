@@ -1,14 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-//probando
-// probando
 import logoAdalab from "../images/logo-adalab-80px.png";
 import PropTypes from "prop-types";
 import awesomeProfilePic from "../images/tarjetas-molonas.svg";
 import Header from "./Header";
 import InputContainer from "./InputContainer.js";
 import ResetButton from "./ResetButton";
-import ShareButton from "./ShareButton";
 import Collapsibles from "./Collapsibles.js";
 import PalettesContainer from "./PalettesContainer.js";
 import Footer from "./Footer";
@@ -148,7 +144,6 @@ class Editor extends React.Component {
   render() {
     const classColor = `card_content palette${this.state.palette}`;
     const { profile, isAvatarDefault } = this.state;
-    const handleClick = this.handleClick;
 
     return (
       <React.Fragment>
@@ -205,13 +200,11 @@ class Editor extends React.Component {
 
 Editor.propTypes = {
   getData: PropTypes.func,
-  state: PropTypes.object,
   updateCheckboxColor: PropTypes.func,
   saveData: PropTypes.func,
   clearForm: PropTypes.func,
   resetData: PropTypes.func,
   forceUpdate: PropTypes.func,
-  setState: PropTypes.object,
   updatePreviewName: PropTypes.func,
   updatePreviewJob: PropTypes.func,
   updatePreviewEmail: PropTypes.func,

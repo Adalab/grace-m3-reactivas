@@ -15,9 +15,9 @@ const MainDescription = props => {
 };
 
 MainDescription.propTypes = {
-  foto: PropTypes.string,
-  mainTitle: PropTypes.string,
-  mainText: PropTypes.string
+  foto: PropTypes.string.isRequired,
+  mainTitle: PropTypes.string.isRequired,
+  mainText: PropTypes.string.isRequired
 };
 
 export default MainDescription;

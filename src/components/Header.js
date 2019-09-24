@@ -16,7 +16,7 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  foto: PropTypes.string,
-  alt: PropTypes.string
+  foto: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
 };
 export default Header;

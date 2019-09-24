@@ -1,5 +1,6 @@
 import React from "react";
 import ShareButton from "./ShareButton";
+import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ShareButton.scss";
 import "../stylesheets/scss/core/Variables.scss";
 
@@ -70,5 +71,13 @@ class Share extends React.Component {
     );
   }
 }
+
+Share.propTypes = {
+  createCard: PropTypes.func,
+  handleHiddenClass: PropTypes.func,
+  sendRequest: PropTypes.func,
+  data: PropTypes.object,
+  title: PropTypes.string.isRequired
+};
 
 export default Share;
