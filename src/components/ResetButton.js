@@ -2,14 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../stylesheets/scss/components/ResetButton.scss";
 
-function ResetButton(props) {
+const ResetButton = props => {
+  const { action, icon, name } = props;
+
   return (
-    <button className="card_button-reset js-reset" onClick={props.action}>
+    <button className="card_button-reset js-reset" onClick={action}>
       {" "}
-      <i className={props.icon}></i> {props.name}
+      <i className={icon}></i> {name}
     </button>
   );
-}
+};
 
 ResetButton.propTypes = {
   action: PropTypes.func.isRequired,

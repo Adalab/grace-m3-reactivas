@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class Input extends React.Component {
-  render() {
-    return (
-      <div className="fill-in_item">
-        <label className="fill-in_label" htmlFor={this.props.id}>
-          {this.props.label}
-        </label>
-        <input className={`fill-in_input ${this.props.classInput}`} id={this.props.id} type={this.props.type} name={this.props.name} placeholder={this.props.placeholder} minLength={this.props.minLength} pattern={this.props.pattern} onChange={this.props.action} value={this.props.value} required />
-      </div>
-    );
-  }
-}
+const Input = props => {
+  const { id, label, classInput, type, name, placeholder, minLength, pattern, action, value } = props;
+  return (
+    <div className="fill-in_item">
+      <label className="fill-in_label" htmlFor={id}>
+        {label}
+      </label>
+      <input className={`fill-in_input ${classInput}`} id={id} type={type} name={name} placeholder={placeholder} minLength={minLength} pattern={pattern} onChange={action} value={value} required />
+    </div>
+  );
+};
 
 Input.propTypes = {
   id: PropTypes.string.isRequired.isRequired,

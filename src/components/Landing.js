@@ -6,7 +6,7 @@ import SquareFontawesomeIcons from "./SquareFontawesomeIcons";
 import MainButton from "./MainButton";
 import Footer from "./Footer";
 
-function Landing() {
+const Landing = () => {
   return (
     <div className="main">
       <div className="main_content">
@@ -17,6 +17,6 @@ function Landing() {
       <Footer url="https://www.adalab.es" foto={logoAdalab} title="Awesome profile-cards @ Sense.JS 2019" />
     </div>
   );
-}
+};
 
 export default Landing;

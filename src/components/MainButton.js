@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../stylesheets/scss/pages/Landing.scss";
 import "../stylesheets/scss/components/Share.scss";
 
-function MainButton() {
+const MainButton = () => {
   return (
     <button className="main_button">
       <Link to="/editor" className="main_button_link">
@@ -11,6 +11,6 @@ function MainButton() {
       </Link>
     </button>
   );
-}
+};
 
 export default MainButton;

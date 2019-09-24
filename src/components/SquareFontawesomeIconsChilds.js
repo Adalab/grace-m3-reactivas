@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import "../stylesheets/scss/components/SquareFontawesomeIconsChilds.scss";
 
 const SquareFontawesomeIconsChilds = props => {
-  const classNameIcon = `${props.iconClassName} main_action_icon`;
+  const { iconClassName, name } = props;
+  const classNameIcon = `${iconClassName} main_action_icon`;
   return (
     <div className="main_action">
       {" "}
       <i className={classNameIcon}></i>
-      <p className="main_action_item">{props.name}</p>
+      <p className="main_action_item">{name}</p>
     </div>
   );
 };
